@@ -1,0 +1,42 @@
+{
+  "name": "harvee-qa-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Harvee Technologies QA automation assessment - Playwright + TypeScript suite for https://www.saucedemo.com",
+  "author": "Chandramouli Kancharla",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:chromium": "cross-env BROWSER=chromium playwright test",
+    "test:firefox": "cross-env BROWSER=firefox playwright test",
+    "test:webkit": "cross-env BROWSER=webkit playwright test",
+    "test:all-browsers": "cross-env BROWSER=all playwright test",
+    "report": "playwright show-report reports/html",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run typecheck && npm run lint && npm run format:check",
+    "clean": "node -e \"for (const d of ['reports','test-results']) require('fs').rmSync(d,{recursive:true,force:true})\""
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "cross-env": "^10.1.0",
+    "dotenv": "^18.0.9",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}
