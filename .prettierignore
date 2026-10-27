@@ -1,6 +1,8 @@
 node_modules/
+.features-gen/
 reports/
 test-results/
 playwright-report/
+logs/
 package-lock.json
 *.md

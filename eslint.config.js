@@ -6,7 +6,15 @@ const { defineConfig } = require('eslint/config');
 
 module.exports = defineConfig(
   {
-    ignores: ['node_modules/', 'reports/', 'test-results/', 'playwright-report/', 'blob-report/'],
+    ignores: [
+      'node_modules/',
+      '.features-gen/',
+      'reports/',
+      'test-results/',
+      'playwright-report/',
+      'blob-report/',
+      'logs/',
+    ],
   },
   js.configs.recommended,
   {
@@ -32,7 +40,13 @@ module.exports = defineConfig(
     files: ['**/*.js'],
     languageOptions: {
       sourceType: 'commonjs',
-      globals: { require: 'readonly', module: 'writable', __dirname: 'readonly' },
+      globals: {
+        require: 'readonly',
+        module: 'writable',
+        __dirname: 'readonly',
+        process: 'readonly',
+        console: 'readonly',
+      },
     },
   },
   prettier,

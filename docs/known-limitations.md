@@ -4,8 +4,8 @@
 
 | ID | Summary | Where found | Evidence | How the suite handles it |
 |----|---------|-------------|----------|--------------------------|
-| DEF-01 | Sorting has no effect for `problem_user`: after choosing "Price (low to high)" the list stays `[29.99, 9.99, 15.99, 49.99, 7.99, 15.99]` and the dropdown reverts to its default. | EX-01 charter / `tests/regression/problem-user.spec.ts` | Assertion message in the HTML report (all 3 browsers); first seen in a live DOM probe. | `test.fail()` with full assertion → reported as *expected failure*. If fixed, Playwright reports it as an unexpected pass so the marker is removed. |
-| DEF-02 | Login form controls (Username, Password, Login button) show **no visible focus indicator** when reached with Tab (WCAG 2.4.7 Focus Visible). Computed style `outline-style: none`; no box-shadow change. | `tests/accessibility/keyboard.spec.ts` | Focused-state screenshots attached to the test in the HTML report. The method was validated with a positive control: injecting `input:focus{outline:3px solid red}` is detected by the same pixel comparison. | `test.fail()` with full assertion, as above. |
+| DEF-01 | Sorting has no effect for `problem_user`: after choosing "Price (low to high)" the list stays `[29.99, 9.99, 15.99, 49.99, 7.99, 15.99]` and the dropdown reverts to its default. | EX-01 charter / `ProductSorting.feature` → "TC06 Sorting-ProblemUser" | Assertion message in the HTML report (all 3 browsers); first seen in a live DOM probe. | Tagged `@known-defect @DEF-01 @fail`; `@fail` compiles to Playwright `test.fail()`, so the full assertion runs and the result is an *expected failure*. If fixed, Playwright reports an unexpected pass so the tag is removed. |
+| DEF-02 | Login form controls (Username, Password, Login button) show **no visible focus indicator** when reached with Tab (WCAG 2.4.7 Focus Visible). Computed style `outline-style: none`; no box-shadow change. | `Accessibility.feature` → "TC19 Keyboard-FocusVisible" | Focused-state screenshots attached to the scenario in the HTML report. The method was validated with a positive control: injecting `input:focus{outline:3px solid red}` is detected by the same pixel comparison. | `@known-defect @DEF-02 @fail` with full assertion, as above. |
 
 `problem_user` is a deliberately faulty demo persona, so DEF-01 is expected behaviour of the practice site. It is reported because the brief asks for genuine defects to be evidenced, not hidden.
 
@@ -13,12 +13,23 @@
 
 | Item | Detail |
 |------|--------|
-| Symptom | First all-browser run (`evidence/run-1-all-browsers-default-workers.log`): 112 passed, **2 failed, both Firefox only**. TC20 timed out on the Login click (the navigation never completed and browser-context teardown also hung); TC22's "Open Menu" click did not open the menu. |
+| When | Before the suite was restructured into BDD (same page objects, same assertions); logs kept in `evidence/pre-bdd-migration/`. |
+| Symptom | First all-browser run (`evidence/pre-bdd-migration/run-1-all-browsers-default-workers.log`): 112 passed, **2 failed, both Firefox only**. TC20 timed out on the Login click (the navigation never completed and browser-context teardown also hung); TC22's "Open Menu" click did not open the menu. |
 | Reproduction | Firefox, the two tests, `--repeat-each=10`, retries 0: **2/20 and 1/20 failures with 4 workers; 0/20 with 1 worker**. Chromium full suite `--repeat-each=3`: 114/114 passed. |
 | Supporting evidence | Firefox process logged `GraphicsCriticalError: RenderCompositorSWGL failed mapping default framebuffer` and context-close timeouts during the failing runs. |
 | Probable root cause | Resource contention when several headless Firefox instances run in parallel on this Windows laptop. Not attributed to Sauce Demo: the same steps pass in Chromium and WebKit and pass consistently in Firefox at lower parallelism. Confidence: medium — not proven at the browser-engine level. |
-| Action | Added a `WORKERS` setting (CI uses 2). Final run with `WORKERS=2`: 114/114, 0 flaky (`evidence/run-2-all-browsers-2-workers.log`). Retries were **not** raised to hide the failure. |
+| Action | Added a `WORKERS` setting (CI uses 2). Run with `WORKERS=2`: 114/114, 0 flaky (`evidence/pre-bdd-migration/run-2-all-browsers-2-workers.log`). The BDD suite is executed the same way (`evidence/bdd-run-all-browsers-2-workers.log`). Retries were **not** raised to hide the failure. |
 | Follow-up | Monitor Firefox in CI (Linux runners); if failures recur at 2 workers, capture traces and raise with the Playwright/Firefox projects. |
+
+## WebKit failures after the BDD restructure (test defects, fixed)
+
+| Item | Detail |
+|------|--------|
+| Symptom | First all-browser BDD run (`evidence/bdd-run-1-all-browsers-3-webkit-failures.log`): 111 passed, **3 failed, all WebKit**. TC16 (two products) and TC17 (cancel from overview) stayed on checkout step one; TC10 read the cart list as 2 names / 0 prices. |
+| Evidence | Page snapshot of the checkout failures: Last Name and Postal Code filled, **First Name empty**, error "First Name is required". The TC10 failure happened in a step that read the cart straight after clicking the cart link. |
+| Root cause | Test synchronisation, not the product. (1) The first `fill()` ran while the checkout form was still mounting, and WebKit dropped the value; the same race existed before the restructure but had not shown up. (2) In the BDD version of TC10 the "Cart page displayed" wait that the old spec had was missing, so the list was read during navigation. Confidence: high for (2); medium for (1), since it is inferred from the snapshot, not from engine internals. |
+| Fix | `CheckoutPage.fillInformation` waits for the information step and then asserts every field kept its value; `CartPage.getLineItems`/`expectEmpty` and `CheckoutPage.getOverviewItems` wait for their page first. No retries added. |
+| Verification | Affected WebKit scenarios with `--repeat-each=5`: 50/50 passed. Final all-browser run: 114/114 (`evidence/bdd-run-2-all-browsers-2-workers.log`). |
 
 ## Observations needing a product decision (not asserted as defects)
 

@@ -1,0 +1,15 @@
+{
+  "cucumberautocomplete.steps": [
+    "src/core/support/hooks.ts",
+    "src/test/steps/shared/**/*.ts",
+    "src/test/steps/domains/**/*.ts"
+  ],
+  "cucumberautocomplete.syncfeatures": "src/test/features/**/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": false,
+  "cucumberautocomplete.smartSnippets": true,
+  "cucumberautocomplete.stepsInvariants": true,
+  "cucumberautocomplete.pureTextSteps": true,
+  "files.exclude": {
+    ".features-gen": true
+  }
+}

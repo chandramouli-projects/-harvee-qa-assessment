@@ -1,17 +1,19 @@
 # Dependencies
 node_modules/
 
-# Local configuration - never commit
+# Local configuration - never commit (config/.env.example is the template)
 .env
 .env.*
 !.env.example
 
 # Generated test output
+.features-gen/
 reports/
 test-results/
 playwright-report/
 blob-report/
 playwright/.cache/
+logs/
 *.zip
 
 # OS / editor
@@ -19,3 +21,4 @@ playwright/.cache/
 Thumbs.db
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json

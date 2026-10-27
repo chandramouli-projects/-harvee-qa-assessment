@@ -8,7 +8,7 @@ Functional, accessibility, responsive, cross-browser and safe session checks of 
 
 | Layer | What belongs here | Status in this assessment |
 |-------|-------------------|---------------------------|
-| UI automation (Playwright) | Critical journeys: login and its errors, full-list sorting, cart badge and contents, checkout validation, totals and completion, cancellation, session protection, keyboard operability, axe scan, viewport checks. | Implemented, executed on Chromium, Firefox and WebKit. |
+| UI automation (Playwright + BDD via playwright-bdd) | Critical journeys, written as Gherkin scenarios tagged with their manual IDs: login and its errors, full-list sorting, cart badge and contents, checkout validation, totals and completion, cancellation, session protection, keyboard operability, axe scan, viewport checks. | Implemented, executed on Chromium, Firefox and WebKit. |
 | API / unit | Price, tax and total calculation; sort comparators (including ties); field validation; authorisation of every protected endpoint; order idempotency. | **Not performed.** No source or API contract was supplied, so no endpoints were invented. Recommended for a client-owned system. |
 | Manual / exploratory | `problem_user` charter, visual and responsive review on real devices, screen-reader usability, duplicate submission and order integrity, usability. | Designed (ANSWERS.md A1, EX-01). |
 
@@ -18,9 +18,9 @@ The UI layer keeps a thin, stable set of critical journeys. These run across thr
 
 ## Entry and exit criteria
 
-- **Entry:** site reachable; `.env` configured; `npm run check` passes.
+- **Entry:** site reachable; `config/.env.demo` configured; `npm run check` passes.
 - **Exit:** every P1 case executed; all unexpected failures investigated and classified as product defect, test defect or environment; known defects tracked with evidence; no unexplained flaky tests.
 
 ## Reliability rules
 
-No fixed sleeps (enforced by ESLint). Each test gets a fresh browser context and its own login. Retries default to 0 so first-run failures stay visible. Any intermittent failure is reproduced with `--repeat-each` before it is classified.
+No fixed sleeps (enforced by ESLint). Each scenario gets a fresh browser context and its own login. Retries default to 0 so first-run failures stay visible. Any intermittent failure is reproduced with `--repeat-each` before it is classified.

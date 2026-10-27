@@ -1,4 +1,4 @@
-name: Playwright tests
+name: Playwright BDD tests
 
 on:
   push:
@@ -36,21 +36,26 @@ jobs:
       # Public Sauce Demo practice credentials. For a client system, map repository secrets
       # to the same variable names instead of copying the example file.
       - name: Configure environment
-        run: cp .env.example .env
+        run: cp config/.env.example config/.env.demo
 
-      - name: Static checks
+      - name: Static checks (bddgen, tsc, ESLint, Prettier)
         if: matrix.browser == 'chromium'
         run: npm run check
 
-      - name: Run tests
-        run: npx playwright test
+      - name: Run BDD scenarios
+        run: npm test
+
+      - name: Build Cucumber Spark report
+        if: ${{ !cancelled() }}
+        run: npm run report:spark
 
       - name: Upload reports
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report-${{ matrix.browser }}
+          name: test-reports-${{ matrix.browser }}
           path: |
             reports/
             test-results/
+            logs/
           retention-days: 14

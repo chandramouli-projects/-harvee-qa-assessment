@@ -78,8 +78,9 @@ The UI layer keeps a thin, stable set of critical journeys. These run across thr
 
 The full framework and how to run it are in `README.md`; the case-by-case mapping is in `docs/traceability-matrix.md`.
 
-- 38 tests per browser across 10 spec files, each prefixed with its manual ID. All mandatory scenarios are covered: TC01, TC02, TC06 plus the three other sorts, TC09 with cart-page removal and empty cart, TC15, the parameterised TC12–TC14, cancellation (TC17) and TC22.
-- **Executed result (2026-10-27, retries 0):** 114/114 passed across Chromium 156, Firefox 157 and WebKit 27.2, including 6 expected failures for the two documented defects. 0 failed, 0 skipped, 0 flaky in the final run. The first run had 2 Firefox-only failures; these were investigated and attributed to local parallel-load contention (`docs/known-limitations.md`).
+- Playwright + TypeScript BDD suite (Gherkin features run on the Playwright runner via playwright-bdd): 7 feature files, 38 scenarios per browser, each named and tagged with its manual ID (`--grep @TC15` runs one case). All mandatory scenarios are covered: TC01, TC02, TC06 plus the three other sorts, TC09 with cart-page removal and empty cart, TC15, the parameterised TC12–TC14, cancellation (TC17) and TC22.
+- **Executed result (2026-10-27, retries 0):** 114/114 passed across Chromium 156, Firefox 157 and WebKit 27.2, including 6 expected failures (`@fail`) for the two documented defects. 0 failed, 0 skipped, 0 flaky in the final run (`evidence/bdd-run-2-all-browsers-2-workers.log`).
+- **Failures investigated, not retried away:** the first BDD run had 3 WebKit-only failures caused by test synchronisation (fixed, then 50/50 on `--repeat-each=5`). Before the BDD restructure, a run had 2 Firefox-only failures attributed to local parallel-load contention. Both are in `docs/known-limitations.md`.
 
 ---
 
@@ -91,8 +92,8 @@ The full framework and how to run it are in `README.md`; the case-by-case mappin
 
 | # | Defect | Why it matters | Fix in the rewrite |
 |---|--------|----------------|--------------------|
-| 1 | URL written in Markdown link form (e.g. `[https://...](https://...)`) inside `page.goto()` | Not a valid URL string, so navigation fails or goes to a wrong address | `baseURL` from `.env`; `page.goto('/')` inside `LoginPage` |
-| 2 | Hard-coded URL and credentials | Cannot switch environments; credentials leak into source control | `utils/environment.ts` loads and validates `BASE_URL`, users and `PASSWORD` via dotenv/CI variables |
+| 1 | URL written in Markdown link form (e.g. `[https://...](https://...)`) inside `page.goto()` | Not a valid URL string, so navigation fails or goes to a wrong address | `baseURL` from `config/.env.<ENV>`; `navigateTo('/')` inside `LoginPage` |
+| 2 | Hard-coded URL and credentials | Cannot switch environments; credentials leak into source control | `config/testConfig.ts` loads and validates `BASE_URL`, users and `PASSWORD` via dotenv/CI variables; the feature refers to the user by role |
 | 3 | No Page Object Model; raw selectors in the test | Duplication and brittle maintenance | `LoginPage`, `ProductsPage`, `CartPage`, `CheckoutPage`, `MenuComponent` |
 | 4 | Ambiguous "Add to cart" locator (first/any button) | Adds an unknown product, or fails in strict mode | Button located inside the product card matched by **exact name** |
 | 5 | No assertion that login succeeded | Later failures are misattributed; the test may run on the login page | `productsPage.expectLoaded()` (URL, title, items) |
@@ -103,44 +104,53 @@ The full framework and how to run it are in `README.md`; the case-by-case mappin
 | 10 | No subtotal + tax calculation | The business rule is never verified | `expectTotalsConsistent()`: Item total = Σ prices; Total = Item total + Tax |
 | 11 | No currency parsing or cent-level comparison | Floating-point or string comparison gives false results | `parseMoneyToCents()` converts "$43.18" → 4318 |
 | 12 | No order-completion or empty-cart check | A broken Finish step or leftover cart goes unnoticed | Asserts "Thank you for your order!", badge hidden, cart empty after Back Home |
-| 13 | No manual test ID | No traceability to requirements | Titles prefixed `TC16` (and TC15 for the main journey) |
+| 13 | No manual test ID | No traceability to requirements | Scenario tagged and named `TC16` (and `TC15` for the main journey) |
 
-### Rewritten test (`tests/regression/b1-cart-total.spec.ts`, executed and passing ×3 browsers)
+### Rewritten test (`src/test/features/UI/OrderTotals.feature`, executed and passing ×3 browsers)
 
-```ts
-const BASKETS = [
-  { case: 'one product', products: [PRODUCTS.onesie] },
-  { case: 'two products', products: [PRODUCTS.backpack, PRODUCTS.bikeLight] },
-  { case: 'all six products', products: Object.values(PRODUCTS) },
-];
+```gherkin
+@ui @checkout @regression
+Feature: Order total calculation
 
-for (const basket of BASKETS) {
-  test(`TC16 order total equals item total plus tax for ${basket.case}`, async ({
-    loggedInProductsPage: productsPage, menu, cartPage, checkoutPage,
-  }) => {
-    const selected = await productsPage.addProductsToCart(basket.products);
-    await menu.expectCartCount(selected.length);
+  Background:
+    Given I am logged in as the "standard" user
 
-    await menu.openCart();
-    await cartPage.expectLoaded();
-    expectSameLineItems(await cartPage.getLineItems(), selected, 'cart items and prices');
-    await cartPage.checkout();
-    await checkoutPage.submitInformation(CUSTOMER);
-    await checkoutPage.expectStep('overview');
+  @TC16 @P1
+  Scenario Outline: TC16 OrderTotal - Order total equals item total plus tax for <basket>
+    When I add the products "<products>" to the cart
+    Then the cart badge should show <count>
+    When I open the cart
+    Then the Cart page should be displayed
+    And the cart should contain exactly the selected products at their listed prices
+    When I proceed to checkout
+    And I submit valid checkout information
+    Then the checkout "overview" step should be displayed
+    And the overview should list exactly the selected products at their listed prices
+    And the order totals should equal the selected prices plus tax
+    When I finish the order
+    Then I should see the order confirmation "Thank you for your order!"
+    When I go back home from the confirmation
+    Then the Products page should be displayed
+    And the cart badge should be hidden
 
-    expectSameLineItems(await checkoutPage.getOverviewItems(), selected, 'overview items');
-    expectTotalsConsistent(selected, await checkoutPage.getTotals());
-
-    await checkoutPage.finish();
-    await expect(checkoutPage.completeHeader).toHaveText(MESSAGES.orderComplete);
-    await checkoutPage.backHome();
-    await productsPage.expectLoaded();
-    await menu.expectCartCount(0);
-  });
-}
+    Examples:
+      | basket           | count | products                                                      |
+      | one product      | 1     | Sauce Labs Onesie                                             |
+      | two products     | 2     | Sauce Labs Backpack, Sauce Labs Bike Light                    |
+      | all six products | 6     | Sauce Labs Backpack, Sauce Labs Bike Light, … (all six names) |
 ```
 
-The login, which includes the success assertion, happens in the `loggedInProductsPage` fixture. The tax rate is never hard-coded.
+The key step (`src/test/steps/domains/checkout.steps.ts`):
+
+```ts
+/** Item total = sum of selected prices; Total = Item total + Tax (tax read from the page). */
+Then('the order totals should equal the selected prices plus tax', async ({ checkoutPage, testContext }) => {
+  const totals = await checkoutPage.getTotals();             // "$43.18" → 4318 integer cents
+  expectTotalsConsistent(getSelectedItems(testContext), totals);
+});
+```
+
+`I am logged in as the "standard" user` asserts the Products page and an empty cart before the scenario starts. The price of each product is recorded on the Products page at the moment it is added, so the cart, the overview and the totals are all compared against what was actually selected. The tax rate is never hard-coded.
 
 ---
 
