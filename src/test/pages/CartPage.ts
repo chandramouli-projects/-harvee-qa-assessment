@@ -26,6 +26,26 @@ export class CartPage extends BasePage {
     return this.items.filter({ has: this.page.getByText(name, { exact: true }) });
   }
 
+  lineQuantity(name: string): Locator {
+    return this.item(name).getByTestId('item-quantity');
+  }
+
+  lineDescription(name: string): Locator {
+    return this.item(name).getByTestId('inventory-item-desc');
+  }
+
+  linePrice(name: string): Locator {
+    return this.item(name).getByTestId('inventory-item-price');
+  }
+
+  lineRemoveButton(name: string): Locator {
+    return this.item(name).getByRole('button', { name: 'Remove' });
+  }
+
+  async openItem(name: string): Promise<void> {
+    await this.item(name).getByTestId('inventory-item-name').click();
+  }
+
   async removeItem(name: string): Promise<void> {
     await this.item(name).getByRole('button', { name: 'Remove' }).click();
     await expect(this.item(name)).toHaveCount(0);

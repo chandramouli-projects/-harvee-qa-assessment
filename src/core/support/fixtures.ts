@@ -1,11 +1,19 @@
 import { test as base } from 'playwright-bdd';
 import { TestContext } from './test-context';
-import { LoginPage, ProductsPage, CartPage, CheckoutPage, MenuComponent } from '../../test/pages';
+import {
+  LoginPage,
+  ProductsPage,
+  ProductDetailPage,
+  CartPage,
+  CheckoutPage,
+  MenuComponent,
+} from '../../test/pages';
 
 interface Fixtures {
   testContext: TestContext;
   loginPage: LoginPage;
   productsPage: ProductsPage;
+  productDetailPage: ProductDetailPage;
   cartPage: CartPage;
   checkoutPage: CheckoutPage;
   menu: MenuComponent;
@@ -26,6 +34,9 @@ export const test = base.extend<Fixtures>({
   },
   productsPage: async ({ page }, use) => {
     await use(new ProductsPage(page));
+  },
+  productDetailPage: async ({ page }, use) => {
+    await use(new ProductDetailPage(page));
   },
   cartPage: async ({ page }, use) => {
     await use(new CartPage(page));

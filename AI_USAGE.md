@@ -1,52 +1,51 @@
-# AI Usage Disclosure
+# AI Usage
 
-## Tool used
+The brief allows AI coding assistants and asks where they were used, what was asked and what was changed. This is that record.
 
-**Claude Code (Anthropic), model Claude Opus 5.5**, run as a coding agent in VS Code on my machine on 2026-10-27.
+## Tool
 
-## What I asked for
+**Claude Code** (Anthropic, model Claude Opus 5.5), used as a coding agent in VS Code on my machine on 27–28 October 2026. Two sessions worked on the same repository: one for the functional suite, the documents and the Excel, and one for the accessibility and security suites. They agreed which files each one owned, so neither overwrote the other.
 
-I gave the agent the full Harvee assessment brief. I asked it to build the Playwright/TypeScript project from an empty workspace, write the manual suite and written answers, run the tests against Sauce Demo, investigate failures, and report results truthfully.
+## Where AI was used and what I asked for
 
-I then asked it to restructure the suite into the BDD framework style I use day to day (Gherkin features, step definitions, `src/core` + `src/test` layout, `config/testConfig.ts`, log4js logging, Cucumber Spark report). I chose playwright-bdd so the Playwright runner, cross-browser projects and expected-failure handling stay. I decided to leave out the self-healing locator engine, SonarCloud, ZAP and recorder tooling from my framework because they do not fit this assessment.
+| Area | What I asked for |
+|------|------------------|
+| Project setup | Create the Playwright + TypeScript project from an empty folder: config, Page Object Model, linting, CI workflow. |
+| Framework style | Restructure the suite into the BDD layout I use at work (Gherkin features, step definitions, `src/core` + `src/test`, `config/testConfig.ts`, log4js, Cucumber Spark report), on the Playwright runner via playwright-bdd. |
+| Manual test design | Explore the site first, then write strong manual test cases in an Excel sheet: numbered steps with an expected result per step, exact data and messages, simple English. Choose 25 core cases for A1 and keep the rest as an extended suite. |
+| Automation | Turn every manual test case into a scenario with the same ID, so the manual and automated results can be compared one to one. |
+| Accessibility and security | Build separate suites: strict WCAG 2.2 A/AA checks with axe-core and keyboard tests; passive, safe security checks only (headers, cookies, storage, no attack traffic). |
+| Written answers | Draft A1 questions and strategy, B1–B4 and C1 notes, then review them against the brief. |
+| Submission check | Go through the brief line by line, map each item to the repository, finish the WebKit run that was cut short, and bring README, ANSWERS and the traceability matrix in line with the Excel and the final run. |
 
-## What the AI did
+## AI output I checked and corrected
 
-| Area | AI contribution |
-|------|-----------------|
-| Project setup | Ran `npm init`, installed dependencies and Playwright browsers, and wrote the configs (TypeScript, Playwright, ESLint, Prettier, dotenv, CI workflow) |
-| Discovery | Ran throw-away scripts against the live site to confirm `data-test` attributes, exact error messages, protected URLs, and `problem_user` and keyboard/focus behaviour before writing assertions |
-| Framework and tests | Wrote all page objects, utilities and the original 38 tests (per browser) |
-| BDD restructure | Read my reference framework, moved the code into its layout, wrote the 7 feature files, step definitions, fixtures, hooks, logger, Spark report script and `.vscode` settings, keeping the same 38 cases and assertions |
-| Debugging | Investigated failures. Causes in the AI's own test code were fixed: (1) a focus check that clipped the outline area; (2) a Shift+Tab focus technique that did not work in Firefox; (3) after the restructure, two WebKit synchronisation issues (checkout form filled while mounting; cart read before it loaded). It confirmed DEF-02 with a positive control, and reproduced intermittent failures with `--repeat-each` before classifying them |
-| Documentation | Drafted ANSWERS.md, README.md, the docs/ files and this file |
+The brief says the team looks at how the output is checked. These are the real cases where the AI's first result was wrong, how it was caught, and what changed.
 
-## Changes made during review
+| What the AI produced | How it was caught | What changed |
+|----------------------|-------------------|--------------|
+| A visible-focus check that compared screenshots of the element box only | A positive control: an injected outline must be detected; at first it was not | The capture area was padded, because focus outlines are drawn outside the box. The check then found a real accessibility bug. |
+| The `problem_user` sorting test failed while waiting for the dropdown, not on the price order | Read the actual failure message instead of trusting "it failed" | The test now fails on the price order itself, which is the real evidence for the bug. |
+| Firefox-only failures that were about to be "fixed" with retries | Re-ran the tests 10× with 4 workers and with 1 worker | Diagnosed as parallel-load contention (2–3 fails in 20 vs 0 in 20); limited workers in CI; retries stay at 0. |
+| A B1 review written before the real snippet was available | The real snippet arrived with the brief | B1 was rewritten line by line against the actual code (e.g. the snippet does fill the checkout fields). |
+| Feature-file IDs changed without being asked | I reviewed the change and rejected it | Reverted; from then on, code changes only with my approval. |
+| Coverage counts in a summary table counted by hand | Recounted from the data with a script | The table now uses the script's numbers. |
+| A Gherkin table cell that should contain a username with spaces | Gherkin trims table cells, so the spaces were lost | Moved to its own scenario with the value in quotes. |
+| A comparison that parsed `visual_user` prices as money | `visual_user` shows prices like "$24.2", which crashed the parser | Prices are compared as displayed text, so the failure clearly says "prices differ". |
+| A menu "retry" helper that made Chromium tests fail | Re-ran the affected tests in all three browsers | Found that Chromium reports the closed menu's Logout link as visible; the menu is now checked by its accessibility state (`aria-hidden`). |
+| An Excel workbook that looked fine in code but would not open in Microsoft Excel (invalid sheet settings) | Opened every version in Excel itself and compared each summary number with a script | Fixed the sheet settings; one workbook only; every formula verified in Excel (0 errors). |
+| Assumed business rules (e.g. names made of spaces, empty-cart checkout) | Compared each expected result with the brief | Unclear rules are written as product-owner questions with an assumption, not as facts. |
+| README, ANSWERS.md and the traceability matrix still used the old case IDs and the old 114-test result after the Excel was renumbered | Checked every ID in the documents against the Excel and the feature files | Rewritten from the Excel; the traceability matrix is now generated by a script from the Excel and the run logs. |
+| A draft B4 message said "the developers estimate it is a small change" | Nobody had given that estimate | Removed; the message only states facts we have. |
+| A bug row said the TC28 test fails for BUG-05 | The run log shows TC28 passes; the test only checks that the error closes | Corrected: BUG-05 is a manual observation still to confirm on screen. |
 
-The AI changed the following after seeing actual results:
-- **problem_user test:** it was failing at the dropdown wait rather than at the sort-order check, so it was changed to fail on the order evidence.
-- **Visible-focus test:** reworked twice (padded capture, real Tab navigation).
-- **WORKERS setting:** added after the Firefox contention investigation, instead of raising retries.
-- **Checkout form and cart reads:** wait for the right page and assert each typed value stuck, after the 3 WebKit failures in the first BDD run. Retries were not added.
+## How the results were verified
 
-## What was verified, and how
+- Static checks (`npm run check`: bddgen, TypeScript strict, ESLint, Prettier) pass.
+- The suites were run in Chrome, Firefox and Safari (WebKit) with retries set to 0; every failure was read and classified as a product bug, a test problem or an environment problem before anything was changed. Every remaining failure is a documented bug with a `@known-defect @BUG-xx` tag.
+- Facts used in the test cases (messages, prices, links, page texts) were checked on the live site, not taken from memory.
+- Word limits (strategy, B4) were counted with a script.
 
-| Verification | Result |
-|--------------|--------|
-| `npm run check` (bddgen, tsc strict, ESLint type-checked, Prettier) | Passed |
-| BDD suite, Chromium, Firefox, WebKit, retries 0 | 114/114 passed, including 6 documented expected failures (`evidence/bdd-run-2-…log`) |
-| First BDD run | 111 passed, 3 WebKit failures; root-caused and fixed (`evidence/bdd-run-1-…log`, `docs/known-limitations.md`) |
-| Fix stability | Affected WebKit scenarios `--repeat-each=5`: 50/50 passed |
-| Expected failures fail for the right reason | DEF-01 fails on the price order `[29.99, 9.99, 15.99, 49.99, 7.99, 15.99]`; DEF-02 on "controls whose appearance does not change on focus" |
-| Pre-restructure history | Firefox contention investigation and runs kept in `evidence/pre-bdd-migration/` |
-| Word limits | Strategy 121 words, Slack message 141 words (counted with `wc -w`) |
+## What is mine
 
-## What I (the candidate) must still do and own
-
-- [ ] Read and understand every file, and be able to explain the design and each scenario in the interview.
-- [ ] Check the B1 review against the **actual supplied snippet**. The AI did not have it, and its review follows the defect list in the brief.
-- [ ] Fill in C2 with my **own real** production-issue experience; the AI deliberately did not invent one.
-- [ ] Re-run `npx cross-env BROWSER=all WORKERS=2 npm test` myself before submitting and confirm the results.
-- [ ] Edit any wording I would not say myself.
-
-The code and documents were generated with AI assistance. I am not claiming I wrote them unaided; my own review is recorded by the checklist above.
+I chose the scope, the 25 core cases, the bug classifications and the assumptions, reviewed the generated code and documents, and rejected changes I did not ask for. The code and documents were produced with AI assistance; I am not claiming I wrote them unaided.

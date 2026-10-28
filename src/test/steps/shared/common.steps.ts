@@ -104,3 +104,41 @@ When(
     addSelectedItems(testContext, await productsPage.addProductsToCart(products));
   },
 );
+
+// ══════════════════════════════════════════════════════════════════════════════
+// BROWSER ACTIONS
+// ══════════════════════════════════════════════════════════════════════════════
+
+When('I refresh the page', async ({ loginPage }) => {
+  logger.info('>> [STEP] Refresh the page');
+  await loginPage.reload();
+});
+
+When('I go back in the browser', async ({ loginPage }) => {
+  logger.info('>> [STEP] Browser Back');
+  await loginPage.goBack();
+});
+
+Then('the page URL should contain {string}', async ({ page }, text: string) => {
+  await expect(page, `URL should contain "${text}"`).toHaveURL(
+    new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+  );
+});
+
+const DIALOGS = 'browserDialogs';
+
+/** Records any alert/confirm/prompt the page opens, so a later step can prove none appeared. */
+Given('I watch for browser pop-up dialogs', ({ page, testContext }) => {
+  testContext.setValue<string[]>(DIALOGS, []);
+  page.on('dialog', (dialog) => {
+    testContext.getValue<string[]>(DIALOGS).push(dialog.message());
+    void dialog.dismiss();
+  });
+});
+
+Then('no browser pop-up dialog should have appeared', ({ testContext }) => {
+  expect(
+    testContext.getValue<string[]>(DIALOGS),
+    'no pop-up should open (input must be plain text)',
+  ).toEqual([]);
+});

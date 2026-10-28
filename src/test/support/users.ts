@@ -9,6 +9,8 @@ const USERS_BY_ROLE: Record<string, string> = {
   'locked out': testConfig.users.lockedOut,
   problem: testConfig.users.problem,
   'performance glitch': testConfig.users.performanceGlitch,
+  error: testConfig.users.error,
+  visual: testConfig.users.visual,
 };
 
 export function usernameFor(role: string): string {

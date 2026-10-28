@@ -25,6 +25,16 @@ export abstract class BasePage {
     await expect(this.page).not.toHaveURL(pattern);
   }
 
+  /** Browser refresh (F5). */
+  async reload(): Promise<void> {
+    await this.page.reload();
+  }
+
+  /** Browser Back button. */
+  async goBack(): Promise<void> {
+    await this.page.goBack();
+  }
+
   // ================== Layout ==================
 
   async setViewportSize(width: number, height: number): Promise<void> {

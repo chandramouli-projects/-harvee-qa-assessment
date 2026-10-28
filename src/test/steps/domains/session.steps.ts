@@ -11,6 +11,15 @@ Given('I have not logged in', async ({ context }) => {
   ).not.toContain('session-username');
 });
 
+/**
+ * Simulates the ~10-minute session expiry without waiting: the login cookie is what expires, so
+ * removing it puts the browser in the same state an idle user reaches after the timeout.
+ */
+When('my session expires', async ({ context }) => {
+  logger.info('>> [STEP] Session expires (login cookie removed)');
+  await context.clearCookies({ name: 'session-username' });
+});
+
 When('I log out', async ({ menu }) => {
   logger.info('>> [STEP] Log out from the menu');
   await menu.logout();

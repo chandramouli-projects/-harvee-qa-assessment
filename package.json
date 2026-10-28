@@ -13,6 +13,8 @@
     "bddgen": "bddgen",
     "test": "bddgen && playwright test",
     "test:smoke": "bddgen && playwright test --grep @smoke",
+    "test:core": "bddgen && playwright test --grep @core",
+    "test:extended": "bddgen && playwright test --grep @extended",
     "test:known-defects": "bddgen && playwright test --grep @known-defect",
     "test:headed": "bddgen && cross-env HEADLESS=false playwright test",
     "test:debug": "bddgen && playwright test --debug",

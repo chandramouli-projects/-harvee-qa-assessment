@@ -6,6 +6,9 @@ export class LoginPage extends BasePage {
   readonly passwordInput: Locator;
   readonly loginButton: Locator;
   readonly errorMessage: Locator;
+  readonly errorCloseButton: Locator;
+  readonly acceptedUsernames: Locator;
+  readonly passwordHint: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -13,6 +16,9 @@ export class LoginPage extends BasePage {
     this.passwordInput = page.getByRole('textbox', { name: 'Password' });
     this.loginButton = page.getByRole('button', { name: 'Login' });
     this.errorMessage = page.getByTestId('error');
+    this.errorCloseButton = page.getByTestId('error-button');
+    this.acceptedUsernames = page.getByTestId('login-credentials');
+    this.passwordHint = page.getByTestId('login-password');
   }
 
   async goto(): Promise<void> {
@@ -24,6 +30,18 @@ export class LoginPage extends BasePage {
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
     await this.loginButton.click();
+  }
+
+  /** Fills both fields, then presses Enter in the password field instead of clicking Login. */
+  async loginWithEnter(username: string, password: string): Promise<void> {
+    await this.usernameInput.fill(username);
+    await this.passwordInput.fill(password);
+    await this.passwordInput.press('Enter');
+  }
+
+  async closeError(): Promise<void> {
+    await this.errorCloseButton.click();
+    await expect(this.errorMessage).toBeHidden();
   }
 
   /** Logs in with Tab / typing / Enter only, asserting focus lands on each field in order. */

@@ -1,0 +1,827 @@
+
+Running 57 tests using 2 workers
+
+  ok  1 [chromium] › .features-gen\Security\Security.feature.spec.js:6:7 › Security › SC01 Transport-HttpsRedirect - Plain HTTP is redirected to HTTPS @security @SC01 @P1 (106ms)
+  x   3 [chromium] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 (275ms)
+  ok  2 [chromium] › .features-gen\Security\Security.feature.spec.js:75:9 › Security › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a <user> user gives no access › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a locked-out user gives no access @security @SC09 @P1 (1.1s)
+  ok  4 [chromium] › .features-gen\Security\Security.feature.spec.js:83:9 › Security › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a <user> user gives no access › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a unknown user gives no access @security @SC09 @P1 (742ms)
+  ok  6 [chromium] › .features-gen\Security\Security.feature.spec.js:95:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for a valid user, wrong password @security @SC10 @P2 (1.5s)
+  ok  5 [chromium] › .features-gen\Security\Security.feature.spec.js:16:7 › Security › SC03 Transport-NoMixedContent - No request uses plain HTTP during a purchase @security @SC03 @P1 (3.1s)
+  ok  7 [chromium] › .features-gen\Security\Security.feature.spec.js:101:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for a locked user, wrong password @security @SC10 @P2 (1.7s)
+  x   8 [chromium] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 (191ms)
+  ok  9 [chromium] › .features-gen\Security\Security.feature.spec.js:107:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for an unknown user @security @SC10 @P2 (1.2s)
+  ok 10 [chromium] › .features-gen\Security\Security.feature.spec.js:115:7 › Security › SC11 Auth-NoCredentialsInUrl - Credentials never appear in the URL @security @SC11 @P1 (1.1s)
+  x  11 [chromium] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (266ms)
+  ok 12 [chromium] › .features-gen\Security\Security.feature.spec.js:122:7 › Security › SC12 Data-BrowserStorage - The password and customer details are not kept in browser storage @security @SC12 @P1 (1.6s)
+  x  14 [chromium] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (206ms)
+  ok 13 [chromium] › .features-gen\Security\Security.feature.spec.js:132:7 › Security › SC13 Input-NoScriptExecution - HTML and script typed into fields are not executed @security @SC13 @P1 (1.5s)
+  ok 15 [chromium] › .features-gen\Security\Security.feature.spec.js:147:7 › Security › SC14 Links-NoOpener - Links that open a new tab do not give that tab access back to the shop @security @SC14 @P3 (1.0s)
+  x  16 [chromium] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (167ms)
+  ok 17 [firefox] › .features-gen\Security\Security.feature.spec.js:6:7 › Security › SC01 Transport-HttpsRedirect - Plain HTTP is redirected to HTTPS @security @SC01 @P1 (149ms)
+  x  19 [firefox] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 (122ms)
+  x  18 [chromium] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 (1.5s)
+  ok 21 [chromium] › .features-gen\Security\Security.feature.spec.js:58:7 › Security › SC07 Session-LogoutClearsCookie - Logout removes the session cookie @security @SC07 @P1 (3.5s)
+  ok 20 [firefox] › .features-gen\Security\Security.feature.spec.js:16:7 › Security › SC03 Transport-NoMixedContent - No request uses plain HTTP during a purchase @security @SC03 @P1 (10.1s)
+  x  23 [firefox] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 (162ms)
+  x  24 [firefox] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (139ms)
+  x  25 [firefox] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (119ms)
+  x  26 [firefox] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (116ms)
+  x  22 [chromium] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 (12.8s)
+  x  27 [firefox] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 (6.7s)
+  ok 28 [firefox] › .features-gen\Security\Security.feature.spec.js:75:9 › Security › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a <user> user gives no access › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a locked-out user gives no access @security @SC09 @P1 (5.3s)
+  ok 30 [firefox] › .features-gen\Security\Security.feature.spec.js:83:9 › Security › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a <user> user gives no access › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a unknown user gives no access @security @SC09 @P1 (1.4s)
+  ok 31 [firefox] › .features-gen\Security\Security.feature.spec.js:95:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for a valid user, wrong password @security @SC10 @P2 (2.3s)
+  ok 32 [firefox] › .features-gen\Security\Security.feature.spec.js:101:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for a locked user, wrong password @security @SC10 @P2 (7.8s)
+  ok 33 [firefox] › .features-gen\Security\Security.feature.spec.js:107:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for an unknown user @security @SC10 @P2 (4.8s)
+  ok 34 [firefox] › .features-gen\Security\Security.feature.spec.js:115:7 › Security › SC11 Auth-NoCredentialsInUrl - Credentials never appear in the URL @security @SC11 @P1 (2.6s)
+  ok 35 [firefox] › .features-gen\Security\Security.feature.spec.js:122:7 › Security › SC12 Data-BrowserStorage - The password and customer details are not kept in browser storage @security @SC12 @P1 (4.3s)
+  ok 29 [firefox] › .features-gen\Security\Security.feature.spec.js:58:7 › Security › SC07 Session-LogoutClearsCookie - Logout removes the session cookie @security @SC07 @P1 (24.0s)
+  ok 36 [firefox] › .features-gen\Security\Security.feature.spec.js:132:7 › Security › SC13 Input-NoScriptExecution - HTML and script typed into fields are not executed @security @SC13 @P1 (5.7s)
+  ok 38 [firefox] › .features-gen\Security\Security.feature.spec.js:147:7 › Security › SC14 Links-NoOpener - Links that open a new tab do not give that tab access back to the shop @security @SC14 @P3 (3.1s)
+  ok 39 [webkit] › .features-gen\Security\Security.feature.spec.js:6:7 › Security › SC01 Transport-HttpsRedirect - Plain HTTP is redirected to HTTPS @security @SC01 @P1 (96ms)
+  x  40 [webkit] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 (98ms)
+  x  37 [firefox] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 (14.7s)
+  ok 41 [webkit] › .features-gen\Security\Security.feature.spec.js:16:7 › Security › SC03 Transport-NoMixedContent - No request uses plain HTTP during a purchase @security @SC03 @P1 (6.2s)
+  x  42 [webkit] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 (231ms)
+  x  44 [webkit] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (151ms)
+  ok 43 [webkit] › .features-gen\Security\Security.feature.spec.js:75:9 › Security › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a <user> user gives no access › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a locked-out user gives no access @security @SC09 @P1 (1.6s)
+  x  46 [webkit] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (217ms)
+  ok 45 [webkit] › .features-gen\Security\Security.feature.spec.js:83:9 › Security › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a <user> user gives no access › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a unknown user gives no access @security @SC09 @P1 (2.3s)
+  x  48 [webkit] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (215ms)
+  ok 47 [webkit] › .features-gen\Security\Security.feature.spec.js:95:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for a valid user, wrong password @security @SC10 @P2 (2.3s)
+  ok 49 [webkit] › .features-gen\Security\Security.feature.spec.js:101:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for a locked user, wrong password @security @SC10 @P2 (2.2s)
+  ok 51 [webkit] › .features-gen\Security\Security.feature.spec.js:107:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for an unknown user @security @SC10 @P2 (2.6s)
+  x  50 [webkit] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 (3.9s)
+  ok 52 [webkit] › .features-gen\Security\Security.feature.spec.js:115:7 › Security › SC11 Auth-NoCredentialsInUrl - Credentials never appear in the URL @security @SC11 @P1 (3.3s)
+  ok 53 [webkit] › .features-gen\Security\Security.feature.spec.js:58:7 › Security › SC07 Session-LogoutClearsCookie - Logout removes the session cookie @security @SC07 @P1 (6.0s)
+  ok 54 [webkit] › .features-gen\Security\Security.feature.spec.js:122:7 › Security › SC12 Data-BrowserStorage - The password and customer details are not kept in browser storage @security @SC12 @P1 (8.0s)
+  ok 56 [webkit] › .features-gen\Security\Security.feature.spec.js:132:7 › Security › SC13 Input-NoScriptExecution - HTML and script typed into fields are not executed @security @SC13 @P1 (4.2s)
+  ok 57 [webkit] › .features-gen\Security\Security.feature.spec.js:147:7 › Security › SC14 Links-NoOpener - Links that open a new tab do not give that tab access back to the shop @security @SC14 @P3 (2.0s)
+  x  55 [webkit] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 (12.1s)
+
+
+  1) [chromium] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 › Then the response header "Strict-Transport-Security" should contain "max-age=" 
+
+    Error: response should include the "Strict-Transport-Security" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:13:5
+
+    Error Context: test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 › Then the response should forbid framing by other sites 
+
+    Error: framing should be blocked; X-Frame-Options=missing, CSP frame-ancestors=missing
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at ..\src\test\steps\domains\security.steps.ts:95
+
+      93 |     `framing should be blocked; X-Frame-Options=${frameOptions ?? 'missing'}, ` +
+      94 |       `CSP frame-ancestors=${/frame-ancestors[^;]*/i.exec(csp)?.[0] ?? 'missing'}`,
+    > 95 |   ).toBe(true);
+         |     ^
+      96 | });
+      97 |
+      98 | // ══════════════════════════════════════════════════════════════════════════════
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:95:5)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:30:5
+
+    Error Context: test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "Content-Security-Policy" should contain "default-src" 
+
+    Error: response should include the "Content-Security-Policy" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:37:7
+
+    Error Context: test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "X-Content-Type-Options" should contain "nosniff" 
+
+    Error: response should include the "X-Content-Type-Options" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:42:7
+
+    Error Context: test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "Referrer-Policy" should contain "" 
+
+    Error: response should include the "Referrer-Policy" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:47:7
+
+    Error Context: test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-chromium\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 › Then the session cookie should be set with the protections "Secure, SameSite, HttpOnly" 
+
+    Error: protections missing on the "session-username" cookie (it is written by page script, so it cannot be HttpOnly)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "Secure",
+    +   "SameSite",
+    +   "HttpOnly",
+    + ]
+
+       at ..\src\test\steps\domains\security.steps.ts:161
+
+      159 |       `protections missing on the "${SESSION_COOKIE}" cookie` +
+      160 |         (scriptWrite ? ' (it is written by page script, so it cannot be HttpOnly)' : ''),
+    > 161 |     ).toEqual([]);
+          |       ^
+      162 |   },
+      163 | );
+      164 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:161:7)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:55:5
+
+    attachment #1: session cookie as written by the page (text/plain) ──────────────────────────────
+    session-username=<value>; path=/; expires=Tue, 27 Oct 2026 18:36:14 GMT
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-chromium\error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 › Then no products should be displayed 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByTestId('title')
+    Expected: hidden
+    Received: visible
+    Timeout:  10000ms
+
+    Call log:
+      - Expect "toBeHidden" getByTestId('title') with timeout 10000ms
+      - waiting for getByTestId('title')
+        23 × locator resolved to <span class="title" data-test="title">Products</span>
+           - unexpected value "visible"
+
+
+       at ..\src\test\steps\domains\session.steps.ts:34
+
+      32 |
+      33 | Then('no products should be displayed', async ({ productsPage }) => {
+    > 34 |   await expect(productsPage.title).toBeHidden();
+         |                                    ^
+      35 |   await expect(productsPage.items).toHaveCount(0);
+      36 | });
+      37 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\session.steps.ts:34:36)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:69:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [firefox] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 › Then the response header "Strict-Transport-Security" should contain "max-age=" 
+
+    Error: response should include the "Strict-Transport-Security" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:13:5
+
+    Error Context: test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-firefox\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [firefox] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 › Then the response should forbid framing by other sites 
+
+    Error: framing should be blocked; X-Frame-Options=missing, CSP frame-ancestors=missing
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at ..\src\test\steps\domains\security.steps.ts:95
+
+      93 |     `framing should be blocked; X-Frame-Options=${frameOptions ?? 'missing'}, ` +
+      94 |       `CSP frame-ancestors=${/frame-ancestors[^;]*/i.exec(csp)?.[0] ?? 'missing'}`,
+    > 95 |   ).toBe(true);
+         |     ^
+      96 | });
+      97 |
+      98 | // ══════════════════════════════════════════════════════════════════════════════
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:95:5)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:30:5
+
+    Error Context: test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-firefox\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [firefox] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "Content-Security-Policy" should contain "default-src" 
+
+    Error: response should include the "Content-Security-Policy" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:37:7
+
+    Error Context: test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-firefox\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [firefox] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "X-Content-Type-Options" should contain "nosniff" 
+
+    Error: response should include the "X-Content-Type-Options" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:42:7
+
+    Error Context: test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-firefox\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [firefox] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "Referrer-Policy" should contain "" 
+
+    Error: response should include the "Referrer-Policy" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:47:7
+
+    Error Context: test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-firefox\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [firefox] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 › Then the session cookie should be set with the protections "Secure, SameSite, HttpOnly" 
+
+    Error: protections missing on the "session-username" cookie (it is written by page script, so it cannot be HttpOnly)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "Secure",
+    +   "SameSite",
+    +   "HttpOnly",
+    + ]
+
+       at ..\src\test\steps\domains\security.steps.ts:161
+
+      159 |       `protections missing on the "${SESSION_COOKIE}" cookie` +
+      160 |         (scriptWrite ? ' (it is written by page script, so it cannot be HttpOnly)' : ''),
+    > 161 |     ).toEqual([]);
+          |       ^
+      162 |   },
+      163 | );
+      164 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:161:7)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:55:5
+
+    attachment #1: session cookie as written by the page (text/plain) ──────────────────────────────
+    session-username=<value>; path=/; expires=Tue, 27 Oct 2026 18:36:38 GMT
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-firefox\error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [firefox] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 › Then no products should be displayed 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByTestId('title')
+    Expected: hidden
+    Received: visible
+    Timeout:  10000ms
+
+    Call log:
+      - Expect "toBeHidden" getByTestId('title') with timeout 10000ms
+      - waiting for getByTestId('title')
+        23 × locator resolved to <span class="title" data-test="title">Products</span>
+           - unexpected value "visible"
+
+
+       at ..\src\test\steps\domains\session.steps.ts:34
+
+      32 |
+      33 | Then('no products should be displayed', async ({ productsPage }) => {
+    > 34 |   await expect(productsPage.title).toBeHidden();
+         |                                    ^
+      35 |   await expect(productsPage.items).toHaveCount(0);
+      36 | });
+      37 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\session.steps.ts:34:36)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:69:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-firefox\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [webkit] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 › Then the response header "Strict-Transport-Security" should contain "max-age=" 
+
+    Error: response should include the "Strict-Transport-Security" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:13:5
+
+    Error Context: test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [webkit] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 › Then the response should forbid framing by other sites 
+
+    Error: framing should be blocked; X-Frame-Options=missing, CSP frame-ancestors=missing
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at ..\src\test\steps\domains\security.steps.ts:95
+
+      93 |     `framing should be blocked; X-Frame-Options=${frameOptions ?? 'missing'}, ` +
+      94 |       `CSP frame-ancestors=${/frame-ancestors[^;]*/i.exec(csp)?.[0] ?? 'missing'}`,
+    > 95 |   ).toBe(true);
+         |     ^
+      96 | });
+      97 |
+      98 | // ══════════════════════════════════════════════════════════════════════════════
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:95:5)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:30:5
+
+    Error Context: test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [webkit] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "Content-Security-Policy" should contain "default-src" 
+
+    Error: response should include the "Content-Security-Policy" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:37:7
+
+    Error Context: test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [webkit] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "X-Content-Type-Options" should contain "nosniff" 
+
+    Error: response should include the "X-Content-Type-Options" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:42:7
+
+    Error Context: test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [webkit] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "Referrer-Policy" should contain "" 
+
+    Error: response should include the "Referrer-Policy" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:47:7
+
+    Error Context: test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [webkit] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 › Then the session cookie should be set with the protections "Secure, SameSite, HttpOnly" 
+
+    Error: protections missing on the "session-username" cookie (it is written by page script, so it cannot be HttpOnly)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "Secure",
+    +   "SameSite",
+    +   "HttpOnly",
+    + ]
+
+       at ..\src\test\steps\domains\security.steps.ts:161
+
+      159 |       `protections missing on the "${SESSION_COOKIE}" cookie` +
+      160 |         (scriptWrite ? ' (it is written by page script, so it cannot be HttpOnly)' : ''),
+    > 161 |     ).toEqual([]);
+          |       ^
+      162 |   },
+      163 | );
+      164 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:161:7)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:55:5
+
+    attachment #1: session cookie as written by the page (text/plain) ──────────────────────────────
+    session-username=<value>; path=/; expires=Tue, 27 Oct 2026 18:37:38 GMT
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [webkit] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 › Then no products should be displayed 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByTestId('title')
+    Expected: hidden
+    Received: visible
+    Timeout:  10000ms
+
+    Call log:
+      - Expect "toBeHidden" getByTestId('title') with timeout 10000ms
+      - waiting for getByTestId('title')
+        22 × locator resolved to <span class="title" data-test="title">Products</span>
+           - unexpected value "visible"
+
+
+       at ..\src\test\steps\domains\session.steps.ts:34
+
+      32 |
+      33 | Then('no products should be displayed', async ({ productsPage }) => {
+    > 34 |   await expect(productsPage.title).toBeHidden();
+         |                                    ^
+      35 |   await expect(productsPage.items).toHaveCount(0);
+      36 | });
+      37 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\session.steps.ts:34:36)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:69:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21 failed
+    [chromium] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 
+    [chromium] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 
+    [chromium] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [chromium] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [chromium] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [chromium] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 
+    [chromium] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 
+    [firefox] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 
+    [firefox] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 
+    [firefox] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [firefox] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [firefox] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [firefox] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 
+    [firefox] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 
+  36 passed (2.1m)
+exit 1

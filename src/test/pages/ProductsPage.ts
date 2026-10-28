@@ -89,6 +89,46 @@ export class ProductsPage extends BasePage {
     await this.sortSelect.selectOption(option);
   }
 
+  itemName(name: string): Locator {
+    return this.item(name).getByTestId('inventory-item-name');
+  }
+
+  itemDescription(name: string): Locator {
+    return this.item(name).getByTestId('inventory-item-desc');
+  }
+
+  itemImage(name: string): Locator {
+    return this.item(name).getByRole('img');
+  }
+
+  /** Footer social link by its visible name (X, Facebook, LinkedIn). */
+  footerLink(name: string): Locator {
+    return this.page.getByRole('contentinfo').getByRole('link', { name, exact: true });
+  }
+
+  async openProductByName(name: string): Promise<void> {
+    await this.itemName(name).click();
+  }
+
+  async openProductByImage(name: string): Promise<void> {
+    await this.itemImage(name).click();
+  }
+
+  /** Every product's name and price text exactly as shown, in display order (no money parsing). */
+  async getDisplayedProducts(): Promise<{ name: string; price: string }[]> {
+    await expect(this.items.first()).toBeVisible();
+    const names = await this.items.getByTestId('inventory-item-name').allInnerTexts();
+    const prices = await this.items.getByTestId('inventory-item-price').allInnerTexts();
+    return names.map((name, index) => ({ name: name.trim(), price: (prices[index] ?? '').trim() }));
+  }
+
+  /** Image source of every product, in display order. */
+  async getImageSources(): Promise<string[]> {
+    await expect(this.items.first()).toBeVisible();
+    const images = await this.items.getByRole('img').all();
+    return Promise.all(images.map(async (image) => (await image.getAttribute('src')) ?? ''));
+  }
+
   async getPriceOf(name: string): Promise<number> {
     return parseMoneyToCents(await this.item(name).getByTestId('inventory-item-price').innerText());
   }

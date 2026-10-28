@@ -1,0 +1,1304 @@
+
+> harvee-qa-assessment@1.0.0 test:webkit
+> bddgen && cross-env BROWSER=webkit playwright test --reporter=list
+
+
+Running 152 tests using 2 workers
+
+  x    2 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:118:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Login screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 (8.4s)
+  ok   1 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:8:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Login screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (10.5s)
+  x    3 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:123:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Products screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 (4.2s)
+  ok   4 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:14:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Login with error screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (6.2s)
+  x    5 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:128:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Cart with item screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 (4.6s)
+  ok   6 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:20:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Products screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (7.4s)
+  x    7 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:133:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Checkout information screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 (5.0s)
+  ok   8 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:26:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Products with menu open screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (7.3s)
+  ok   9 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:140:7 › Accessibility › AC08 Names-LoginForm - Login form controls have accessible names and errors are visible @accessibility @AC08 @P2 (2.1s)
+  ok  11 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:147:7 › Accessibility › AC09 Names-ShopControls - Products and checkout controls have accessible names @accessibility @AC09 @P2 (3.6s)
+  ok  12 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:159:9 › Accessibility › AC10 Announce-Errors - The <form> error is announced to screen readers › AC10 Announce-Errors - The login error is announced to screen readers @accessibility @AC10 @P1 (2.0s)
+  ok  10 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:32:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Product detail screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (7.2s)
+  ok  13 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:164:9 › Accessibility › AC10 Announce-Errors - The <form> error is announced to screen readers › AC10 Announce-Errors - The checkout error is announced to screen readers @accessibility @AC10 @P1 (3.6s)
+  x   15 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:171:7 › Accessibility › AC11 InputPurpose-Checkout - Checkout fields declare their input purpose @accessibility @AC11 @P2 @known-defect @AC-BUG-03 (4.3s)
+  ok  14 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:38:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Cart with item screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (8.1s)
+  ok  17 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:176:7 › Accessibility › AC12 AltText-Products - Product images have alt text that names the product @accessibility @AC12 @P2 (3.3s)
+  ok  16 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:44:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Empty cart screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (7.7s)
+  x   18 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:183:7 › Accessibility › AC13 PageTitle-Unique - Every page has its own title @accessibility @AC13 @P2 @known-defect @AC-BUG-04 (6.3s)
+  ok  19 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:50:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Checkout information screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (8.1s)
+  ok  20 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:193:9 › Accessibility › AC14 Responsive - Key controls are usable without horizontal scrolling at <device> width › AC14 Responsive - Key controls are usable without horizontal scrolling at desktop width @accessibility @AC14 @P3 (3.2s)
+  ok  22 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:203:9 › Accessibility › AC14 Responsive - Key controls are usable without horizontal scrolling at <device> width › AC14 Responsive - Key controls are usable without horizontal scrolling at mobile width @accessibility @AC14 @P3 (2.0s)
+  ok  23 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:217:9 › Accessibility › AC15 Reflow-320 - The <screen> screen fits 320 px without horizontal scrolling › AC15 Reflow-320 - The Products screen fits 320 px without horizontal scrolling @accessibility @AC15 @P2 (1.5s)
+  ok  24 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:223:9 › Accessibility › AC15 Reflow-320 - The <screen> screen fits 320 px without horizontal scrolling › AC15 Reflow-320 - The Cart with item screen fits 320 px without horizontal scrolling @accessibility @AC15 @P2 (2.3s)
+  ok  21 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:56:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Checkout information with error screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (8.8s)
+  ok  25 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:229:9 › Accessibility › AC15 Reflow-320 - The <screen> screen fits 320 px without horizontal scrolling › AC15 Reflow-320 - The Checkout information screen fits 320 px without horizontal scrolling @accessibility @AC15 @P2 (2.9s)
+  ok  27 [webkit] › .features-gen\Security\Security.feature.spec.js:6:7 › Security › SC01 Transport-HttpsRedirect - Plain HTTP is redirected to HTTPS @security @SC01 @P1 (396ms)
+  x   28 [webkit] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 (130ms)
+  ok  29 [webkit] › .features-gen\Security\Security.feature.spec.js:16:7 › Security › SC03 Transport-NoMixedContent - No request uses plain HTTP during a purchase @security @SC03 @P1 (4.3s)
+  x   30 [webkit] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 (128ms)
+  ok  26 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:62:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Checkout overview screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (8.9s)
+  x   31 [webkit] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (174ms)
+  x   33 [webkit] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (167ms)
+  x   34 [webkit] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 (202ms)
+  ok  32 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:68:9 › Accessibility › AC01 Axe-Strict - The <screen> screen has no WCAG 2.2 A/AA violations › AC01 Axe-Strict - The Checkout complete screen has no WCAG 2.2 A/AA violations @accessibility @AC01 @P1 (8.0s)
+  x   35 [webkit] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 (2.7s)
+  ok  36 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:76:7 › Accessibility › AC02 Axe-PositiveControl - The scan detects known violations when they are added @accessibility @AC02 @P1 (5.5s)
+  ok  37 [webkit] › .features-gen\Security\Security.feature.spec.js:58:7 › Security › SC07 Session-LogoutClearsCookie - Logout removes the session cookie @security @SC07 @P1 (3.4s)
+  ok  38 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:83:7 › Accessibility › AC03 Keyboard-Login - A user can log in and add a product using only the keyboard @accessibility @AC03 @P1 (2.8s)
+  ok  40 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:91:7 › Accessibility › AC04 Keyboard-Checkout - A user can check out from the cart page using only the keyboard @accessibility @AC04 @P1 (4.2s)
+  -   41 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:103:7 › Accessibility › AC05 Keyboard-Menu - A user can open the menu and log out using only the keyboard @accessibility @AC05 @P2
+  x   42 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:111:7 › Accessibility › AC06 Keyboard-CartLink - The cart link can receive keyboard focus @accessibility @AC06 @P1 @known-defect @AC-BUG-02 (2.1s)
+  x   39 [webkit] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 (12.7s)
+  ok  43 [webkit] › .features-gen\Security\Security.feature.spec.js:75:9 › Security › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a <user> user gives no access › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a locked-out user gives no access @security @SC09 @P1 (2.1s)
+  ok  44 [webkit] › .features-gen\Security\Security.feature.spec.js:83:9 › Security › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a <user> user gives no access › SC09 Auth-ForgedCookieBlocked - A hand-made session cookie for a unknown user gives no access @security @SC09 @P1 (1.3s)
+  ok  46 [webkit] › .features-gen\Security\Security.feature.spec.js:95:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for a valid user, wrong password @security @SC10 @P2 (1.9s)
+  ok  45 [webkit] › .features-gen\UI\Authentication.feature.spec.js:10:7 › Authentication › TC01 Login-HappyPath - Standard user logs in and reaches the Products page @ui @authentication @TC01 @smoke @P1 @core (2.5s)
+  ok  47 [webkit] › .features-gen\Security\Security.feature.spec.js:101:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for a locked user, wrong password @security @SC10 @P2 (1.8s)
+  ok  49 [webkit] › .features-gen\Security\Security.feature.spec.js:107:9 › Security › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for <case> › SC10 Auth-NoUserEnumeration - The login error does not reveal the account for an unknown user @security @SC10 @P2 (1.7s)
+  ok  50 [webkit] › .features-gen\Security\Security.feature.spec.js:115:7 › Security › SC11 Auth-NoCredentialsInUrl - Credentials never appear in the URL @security @SC11 @P1 (2.4s)
+  ok  48 [webkit] › .features-gen\UI\Authentication.feature.spec.js:18:7 › Authentication › TC26 Login-PerformanceGlitch - performance_glitch_user can log in and reach the Products page @ui @authentication @TC26 @P3 @extended (7.5s)
+  ok  52 [webkit] › .features-gen\UI\Authentication.feature.spec.js:24:7 › Authentication › TC27 Login-EnterKey - Pressing Enter in the password field logs the user in @ui @authentication @TC27 @P2 @extended (2.4s)
+  ok  51 [webkit] › .features-gen\Security\Security.feature.spec.js:122:7 › Security › SC12 Data-BrowserStorage - The password and customer details are not kept in browser storage @security @SC12 @P1 (5.0s)
+  ok  53 [webkit] › .features-gen\UI\Authentication.feature.spec.js:29:7 › Authentication › TC28 Login-CloseError - The login error disappears when its X button is clicked @ui @authentication @TC28 @P3 @extended (2.6s)
+  ok  55 [webkit] › .features-gen\UI\Authentication.feature.spec.js:38:9 › Authentication › <id> Login-Persona - The <role> user can log in and reach the Products page › TC29 Login-Persona - The problem user can log in and reach the Products page @ui @authentication @TC29 @P2 @extended (2.4s)
+  ok  54 [webkit] › .features-gen\Security\Security.feature.spec.js:132:7 › Security › SC13 Input-NoScriptExecution - HTML and script typed into fields are not executed @security @SC13 @P1 (5.2s)
+  ok  56 [webkit] › .features-gen\UI\Authentication.feature.spec.js:44:9 › Authentication › <id> Login-Persona - The <role> user can log in and reach the Products page › TC30 Login-Persona - The error user can log in and reach the Products page @ui @authentication @TC30 @P2 @extended (2.5s)
+  ok  57 [webkit] › .features-gen\Security\Security.feature.spec.js:147:7 › Security › SC14 Links-NoOpener - Links that open a new tab do not give that tab access back to the shop @security @SC14 @P3 (2.4s)
+  ok  58 [webkit] › .features-gen\UI\Authentication.feature.spec.js:50:9 › Authentication › <id> Login-Persona - The <role> user can log in and reach the Products page › TC31 Login-Persona - The visual user can log in and reach the Products page @ui @authentication @TC31 @P2 @extended (2.3s)
+  ok  59 [webkit] › .features-gen\UI\Authentication.feature.spec.js:78:9 › Authentication › <id> Login-InvalidCredentials - Login is rejected for <case> › TC33 Login-InvalidCredentials - Login is rejected for unknown username @ui @authentication @TC33 @P1 @extended (2.2s)
+  ok  60 [webkit] › .features-gen\UI\Authentication.feature.spec.js:58:7 › Authentication › TC32 Login-PageContent - The login page shows placeholders, accepted usernames and the password hint @ui @authentication @TC32 @P3 @extended (1.7s)
+  ok  61 [webkit] › .features-gen\UI\Authentication.feature.spec.js:88:9 › Authentication › <id> Login-RequiredFields - Required-field validation when <case> › TC04 Login-RequiredFields - Required-field validation when both fields empty @ui @authentication @TC04 @P2 @core (1.9s)
+  ok  62 [webkit] › .features-gen\UI\Authentication.feature.spec.js:64:7 › Authentication › TC02 Login-LockedOut - Locked-out user sees the lock-out error and cannot log in @ui @authentication @TC02 @P1 @security @core (2.0s)
+  ok  63 [webkit] › .features-gen\UI\Authentication.feature.spec.js:94:9 › Authentication › <id> Login-RequiredFields - Required-field validation when <case> › TC34 Login-RequiredFields - Required-field validation when username empty @ui @authentication @TC34 @P2 @extended (2.1s)
+  ok  64 [webkit] › .features-gen\UI\Authentication.feature.spec.js:72:9 › Authentication › <id> Login-InvalidCredentials - Login is rejected for <case> › TC03 Login-InvalidCredentials - Login is rejected for wrong password @ui @authentication @TC03 @P1 @core (2.0s)
+  ok  65 [webkit] › .features-gen\UI\Authentication.feature.spec.js:100:9 › Authentication › <id> Login-RequiredFields - Required-field validation when <case> › TC35 Login-RequiredFields - Required-field validation when password empty @ui @authentication @TC35 @P2 @extended (2.0s)
+  ok  67 [webkit] › .features-gen\UI\Authentication.feature.spec.js:110:9 › Authentication › <id> Login-InputVariation - Login is rejected when <case> › TC36 Login-InputVariation - Login is rejected when the username is in capital letters @ui @authentication @TC36 @P2 @extended (1.9s)
+  ok  66 [webkit] › .features-gen\UI\Cart.feature.spec.js:10:7 › Shopping cart › TC09 Cart-Badge - Badge tracks adding two products and removing one from the Products page @ui @cart @TC09 @smoke @P1 @core (4.1s)
+  ok  68 [webkit] › .features-gen\UI\Authentication.feature.spec.js:116:9 › Authentication › <id> Login-InputVariation - Login is rejected when <case> › TC38 Login-InputVariation - Login is rejected when the password is in capital letters @ui @authentication @TC38 @P2 @extended (2.5s)
+  ok  70 [webkit] › .features-gen\UI\Authentication.feature.spec.js:124:7 › Authentication › TC37 Login-InputVariation - Login is rejected when the username has spaces around it @ui @authentication @TC37 @P3 @extended (3.7s)
+  ok  69 [webkit] › .features-gen\UI\Cart.feature.spec.js:20:7 › Shopping cart › TC10 Cart-Remove - Removing products on the Cart page updates contents and badge @ui @cart @TC10 @P1 @core (11.0s)
+  ok  71 [webkit] › .features-gen\UI\Authentication.feature.spec.js:130:7 › Authentication › TC39 Login-ScriptText - Script text in the username is treated as plain text @ui @authentication @TC39 @P2 @security @extended (6.3s)
+  ok  73 [webkit] › .features-gen\UI\Authentication.feature.spec.js:137:7 › Authentication › TC40 Login-LongInput - A 1000-character username and password are rejected without breaking the page @ui @authentication @TC40 @P3 @extended (2.2s)
+  ok  72 [webkit] › .features-gen\UI\Cart.feature.spec.js:32:7 › Shopping cart › TC11 Cart-Empty - A new session starts with an empty cart and Continue Shopping returns to Products @ui @cart @TC11 @P2 @core (3.5s)
+  ok  74 [webkit] › .features-gen\UI\Cart.feature.spec.js:72:7 › Shopping cart › TC57 Cart-ContinueShopping - "Continue Shopping" with items keeps the cart @ui @cart @TC57 @P2 @extended (3.7s)
+  ok  75 [webkit] › .features-gen\UI\Cart.feature.spec.js:43:7 › Shopping cart › TC54 Cart-LineDetails - A cart line shows quantity, name, description, price and Remove @ui @cart @TC54 @P1 @extended (3.2s)
+  ok  76 [webkit] › .features-gen\UI\Cart.feature.spec.js:82:7 › Shopping cart › TC58 Cart-OpenItem - Clicking an item name in the cart opens its product page @ui @cart @TC58 @P3 @extended (3.8s)
+  ok  77 [webkit] › .features-gen\UI\Cart.feature.spec.js:49:7 › Shopping cart › TC55 Cart-AcrossPages - The cart stays the same when moving between pages @ui @cart @TC55 @P1 @extended (4.6s)
+  ok  78 [webkit] › .features-gen\UI\Cart.feature.spec.js:89:7 › Shopping cart › TC59 Cart-SameUserRelogin - The cart is kept after logging out and back in as the same user @ui @cart @TC59 @P2 @extended (5.2s)
+  ok  79 [webkit] › .features-gen\UI\Cart.feature.spec.js:62:7 › Shopping cart › TC56 Cart-Refresh - The cart stays after the page is refreshed @ui @cart @TC56 @P1 @extended (4.0s)
+  ok  81 [webkit] › .features-gen\UI\Checkout.feature.spec.js:10:7 › Checkout › TC12 Checkout-HappyPath - Completing checkout with two products charges item total plus tax and empties the cart @ui @checkout @TC12 @smoke @P1 @core (5.8s)
+  ok  82 [webkit] › .features-gen\UI\Checkout.feature.spec.js:34:7 › Checkout › TC16 Checkout-Cancel - Cancelling from the information step returns to the cart without placing an order @ui @checkout @TC16 @P2 @core (3.5s)
+  ok  83 [webkit] › .features-gen\UI\Checkout.feature.spec.js:45:7 › Checkout › TC17 Checkout-Cancel - Cancelling from the overview step leaves the order unplaced and the cart intact @ui @checkout @TC17 @P2 @core (4.4s)
+  x   80 [webkit] › .features-gen\UI\Cart.feature.spec.js:100:7 › Shopping cart › TC60 Cart-OtherUser - A different user does not see the previous user's cart @ui @cart @TC60 @P1 @security @known-defect @BUG-06 @extended (15.7s)
+  ok  84 [webkit] › .features-gen\UI\Checkout.feature.spec.js:61:9 › Checkout › TC63 Checkout-SpecialNames - The first name "<first_name>" is accepted › TC63 Checkout-SpecialNames - The first name "O'Brien" is accepted @ui @checkout @TC63 @P2 @extended (3.9s)
+  ok  86 [webkit] › .features-gen\UI\Checkout.feature.spec.js:69:9 › Checkout › TC63 Checkout-SpecialNames - The first name "<first_name>" is accepted › TC63 Checkout-SpecialNames - The first name "José" is accepted @ui @checkout @TC63 @P2 @extended (4.5s)
+  ok  85 [webkit] › .features-gen\UI\Cart.feature.spec.js:111:7 › Shopping cart › TC61 Cart-AllProducts - All 6 products can be added, each with quantity 1 @ui @cart @TC61 @P2 @extended (5.9s)
+  ok  88 [webkit] › .features-gen\UI\Cart.feature.spec.js:119:7 › Shopping cart › TC62 Cart-RemoveAll - Removing every product hides the badge @ui @cart @TC62 @P2 @extended (3.8s)
+  ok  87 [webkit] › .features-gen\UI\Checkout.feature.spec.js:77:9 › Checkout › TC63 Checkout-SpecialNames - The first name "<first_name>" is accepted › TC63 Checkout-SpecialNames - The first name "Anne-Marie" is accepted @ui @checkout @TC63 @P2 @extended (5.2s)
+  ok  90 [webkit] › .features-gen\UI\Checkout.feature.spec.js:85:9 › Checkout › TC63 Checkout-SpecialNames - The first name "<first_name>" is accepted › TC63 Checkout-SpecialNames - The first name "李" is accepted @ui @checkout @TC63 @P2 @extended (5.3s)
+  ok  89 [webkit] › .features-gen\UI\Checkout.feature.spec.js:143:7 › Checkout › TC66 Checkout-PaymentShipping - The Overview shows the payment and shipping details @ui @checkout @TC66 @P3 @extended (5.6s)
+  ok  91 [webkit] › .features-gen\UI\Checkout.feature.spec.js:97:9 › Checkout › TC64 Checkout-PostalFormats - The postal code "<postal_code>" is accepted › TC64 Checkout-PostalFormats - The postal code "12345-6789" is accepted @ui @checkout @TC64 @P3 @extended (4.8s)
+  ok  92 [webkit] › .features-gen\UI\Checkout.feature.spec.js:152:7 › Checkout › TC67 Checkout-RefreshOverview - Refreshing the Overview keeps the same items and totals @ui @checkout @TC67 @P2 @extended (5.8s)
+  ok  93 [webkit] › .features-gen\UI\Checkout.feature.spec.js:105:9 › Checkout › TC64 Checkout-PostalFormats - The postal code "<postal_code>" is accepted › TC64 Checkout-PostalFormats - The postal code "SW1A 1AA" is accepted @ui @checkout @TC64 @P3 @extended (4.1s)
+  ok  94 [webkit] › .features-gen\UI\Checkout.feature.spec.js:164:7 › Checkout › TC68 Checkout-BackFromOverview - Browser Back from the Overview returns to the information step @ui @checkout @TC68 @P3 @extended (4.3s)
+  ok  95 [webkit] › .features-gen\UI\Checkout.feature.spec.js:113:9 › Checkout › TC64 Checkout-PostalFormats - The postal code "<postal_code>" is accepted › TC64 Checkout-PostalFormats - The postal code "560001" is accepted @ui @checkout @TC64 @P3 @extended (4.2s)
+  ok  96 [webkit] › .features-gen\UI\Checkout.feature.spec.js:176:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC13 Checkout-Validation - Checkout is blocked with the first name error when first name is missing @ui @checkout @TC13 @P1 @core (4.0s)
+  ok  97 [webkit] › .features-gen\UI\Checkout.feature.spec.js:123:7 › Checkout › TC20 Checkout-KeepValues - Typed names stay in the form after a validation error @ui @checkout @TC20 @P3 @core (4.2s)
+  ok  98 [webkit] › .features-gen\UI\Checkout.feature.spec.js:186:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC14 Checkout-Validation - Checkout is blocked with the last name error when last name is missing @ui @checkout @TC14 @P1 @core (4.0s)
+  ok  99 [webkit] › .features-gen\UI\Checkout.feature.spec.js:132:7 › Checkout › TC65 Checkout-CloseError - The checkout error can be closed and the form completed @ui @checkout @TC65 @P3 @extended (4.6s)
+  ok 100 [webkit] › .features-gen\UI\Checkout.feature.spec.js:196:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC15 Checkout-Validation - Checkout is blocked with the postal code error when postal code is missing @ui @checkout @TC15 @P1 @core (4.2s)
+  ok 101 [webkit] › .features-gen\UI\Navigation.feature.spec.js:10:7 › Navigation and menu › TC83 Navigation-Menu - The menu shows its five items and closes with X @ui @navigation @TC83 @P2 @extended (3.7s)
+  ok 102 [webkit] › .features-gen\UI\Checkout.feature.spec.js:208:7 › Checkout › TC69 Checkout-AllEmpty - With every field empty the first name error is shown first @ui @checkout @TC69 @P2 @extended (4.0s)
+  ok 103 [webkit] › .features-gen\UI\Navigation.feature.spec.js:17:7 › Navigation and menu › TC84 Navigation-AllItems - "All Items" returns to Products from the checkout page with the cart kept @ui @navigation @TC84 @P2 @extended (4.7s)
+  ok 105 [webkit] › .features-gen\UI\Navigation.feature.spec.js:27:7 › Navigation and menu › TC85 Navigation-About - The About link points to the Sauce Labs website @ui @navigation @TC85 @P3 @extended (2.4s)
+  x  104 [webkit] › .features-gen\UI\Checkout.feature.spec.js:217:7 › Checkout › TC70 Checkout-SpacesOnly - Details made of spaces only are rejected @ui @checkout @TC70 @P2 @known-defect @BUG-02 @extended (14.5s)
+  x  106 [webkit] › .features-gen\UI\Navigation.feature.spec.js:31:7 › Navigation and menu › TC86 Navigation-ResetAppState - "Reset App State" empties the cart and resets every product button @ui @navigation @TC86 @P2 @known-defect @BUG-04 @extended (23.9s)
+  ok 107 [webkit] › .features-gen\UI\Checkout.feature.spec.js:226:7 › Checkout › TC71 Checkout-ScriptText - Script text in the first name is treated as plain text @ui @checkout @TC71 @P2 @security @extended (15.8s)
+  ok 109 [webkit] › .features-gen\UI\Navigation.feature.spec.js:39:7 › Navigation and menu › TC87 Navigation-CartIcon - The cart icon opens the cart from the Products, product and checkout pages @ui @navigation @TC87 @P2 @extended (10.4s)
+  x  108 [webkit] › .features-gen\UI\Checkout.feature.spec.js:236:7 › Checkout › TC72 Checkout-EmptyCartOverview - An order cannot be finished when the cart is empty @ui @checkout @TC72 @P2 @known-defect @BUG-03 @extended (16.6s)
+  ok 110 [webkit] › .features-gen\UI\OrderCompletion.feature.spec.js:15:7 › Order completion › TC78 OrderComplete-Content - The confirmation page shows the heading, message, image and Back Home @ui @order-completion @TC78 @P1 @extended (11.2s)
+  x  111 [webkit] › .features-gen\UI\Checkout.feature.spec.js:241:7 › Checkout › TC73 Checkout-EmptyCartButton - Checkout is blocked when the cart is empty @ui @checkout @TC73 @P2 @known-defect @BUG-03 @extended (15.1s)
+  ok 112 [webkit] › .features-gen\UI\OrderCompletion.feature.spec.js:22:7 › Order completion › TC79 OrderComplete-PDF - "Generate PDF order" downloads a PDF of the order @ui @order-completion @TC79 @P3 @extended (14.0s)
+  ok 113 [webkit] › .features-gen\UI\Checkout.feature.spec.js:248:7 › Checkout › TC74 Checkout-LongValues - 255-character details do not break the checkout page @ui @checkout @TC74 @P3 @extended (6.4s)
+  ok 114 [webkit] › .features-gen\UI\OrderCompletion.feature.spec.js:28:7 › Order completion › TC19 OrderComplete-DoubleClick - Double-clicking Finish shows a single confirmation @ui @order-completion @TC19 @P1 @core (10.9s)
+  ok 115 [webkit] › .features-gen\UI\OrderCompletion.feature.spec.js:34:7 › Order completion › TC80 OrderComplete-BackAfterOrder - Browser Back after ordering does not bring the order back @ui @order-completion @TC80 @P1 @extended (12.7s)
+  ok 116 [webkit] › .features-gen\UI\OrderTotals.feature.spec.js:12:9 › Order total calculation › <id> OrderTotal - Order total equals item total plus tax for <basket> › TC75 OrderTotal - Order total equals item total plus tax for one product @ui @checkout @regression @TC75 @P1 @extended (13.8s)
+  ok 117 [webkit] › .features-gen\UI\OrderCompletion.feature.spec.js:42:7 › Order completion › TC81 OrderComplete-Refresh - Refreshing the confirmation page keeps it and the empty cart @ui @order-completion @TC81 @P2 @extended (11.1s)
+  ok 118 [webkit] › .features-gen\UI\OrderTotals.feature.spec.js:30:9 › Order total calculation › <id> OrderTotal - Order total equals item total plus tax for <basket> › TC76 OrderTotal - Order total equals item total plus tax for two products @ui @checkout @regression @TC76 @P1 @extended (14.3s)
+  ok 120 [webkit] › .features-gen\UI\OrderTotals.feature.spec.js:48:9 › Order total calculation › <id> OrderTotal - Order total equals item total plus tax for <basket> › TC18 OrderTotal - Order total equals item total plus tax for all six products @ui @checkout @regression @TC18 @P1 @core (17.8s)
+2026-10-28 10:54:57 [WARN] >> [RESPONSE TIME] "TC82 OrderComplete-TwoTabs - Finishing the same cart in a second tab does not confirm a second order" took 31248ms > 15000ms
+  x  119 [webkit] › .features-gen\UI\OrderCompletion.feature.spec.js:49:7 › Order completion › TC82 OrderComplete-TwoTabs - Finishing the same cart in a second tab does not confirm a second order @ui @order-completion @TC82 @P2 @known-defect @BUG-07 @extended (34.9s)
+  ok 121 [webkit] › .features-gen\UI\OrderTotals.feature.spec.js:68:7 › Order total calculation › TC77 OrderTotal-TaxRate - Two different orders use the same tax rate @ui @checkout @regression @TC77 @P2 @extended (18.4s)
+  x  122 [webkit] › .features-gen\UI\Personas.feature.spec.js:6:7 › Demo personas › TC95 Persona-ErrorUser - error_user can add, remove and order a product like standard_user @ui @personas @TC95 @P2 @known-defect @BUG-08 @extended (16.3s)
+  x  123 [webkit] › .features-gen\UI\Personas.feature.spec.js:30:7 › Demo personas › TC97 Persona-ProblemUserImages - problem_user sees the correct image for every product @ui @personas @TC97 @P2 @known-defect @BUG-10 @extended (10.0s)
+  x  124 [webkit] › .features-gen\UI\Personas.feature.spec.js:21:7 › Demo personas › TC96 Persona-ProblemUserCheckout - problem_user's checkout form keeps exactly what was typed @ui @personas @TC96 @P2 @known-defect @BUG-09 @extended (12.6s)
+  x  125 [webkit] › .features-gen\UI\Personas.feature.spec.js:39:7 › Demo personas › TC98 Persona-VisualUser - visual_user sees the same products, prices, images and layout as standard_user @ui @personas @TC98 @P3 @known-defect @BUG-11 @extended (10.7s)
+  ok 126 [webkit] › .features-gen\UI\ProductDetail.feature.spec.js:10:7 › Product detail page › TC49 ProductDetail-Add - Adding to the cart on the product page updates the button and badge @ui @product-detail @TC49 @P1 @extended (3.7s)
+  ok 127 [webkit] › .features-gen\UI\ProductDetail.feature.spec.js:37:9 › Product detail page › <id> ProductDetail-NotFound - An invalid product id (<case>) shows "ITEM NOT FOUND" › TC52 ProductDetail-NotFound - An invalid product id (unknown id) shows "ITEM NOT FOUND" @ui @product-detail @TC52 @P3 @extended (4.7s)
+  ok 128 [webkit] › .features-gen\UI\ProductDetail.feature.spec.js:17:7 › Product detail page › TC50 ProductDetail-Remove - Removing on the product page updates the button and badge @ui @product-detail @TC50 @P2 @extended (8.8s)
+  ok 129 [webkit] › .features-gen\UI\ProductDetail.feature.spec.js:44:9 › Product detail page › <id> ProductDetail-NotFound - An invalid product id (<case>) shows "ITEM NOT FOUND" › TC53 ProductDetail-NotFound - An invalid product id (not a number) shows "ITEM NOT FOUND" @ui @product-detail @TC53 @P3 @extended (8.4s)
+  ok 130 [webkit] › .features-gen\UI\ProductDetail.feature.spec.js:26:7 › Product detail page › TC51 ProductDetail-Back - "Back to products" returns to Products with the cart kept @ui @product-detail @TC51 @P2 @extended (8.7s)
+  ok 131 [webkit] › .features-gen\UI\Products.feature.spec.js:10:7 › Products page › TC41 Products-Details - Every product shows an image, name, description, price and "Add to cart" button @ui @products @TC41 @P1 @extended (9.2s)
+  ok 132 [webkit] › .features-gen\UI\Products.feature.spec.js:26:7 › Products page › TC44 Products-OpenByImage - Clicking a product image opens its product page @ui @products @TC44 @P2 @extended (6.1s)
+  ok 133 [webkit] › .features-gen\UI\Products.feature.spec.js:14:7 › Products page › TC42 Products-PriceFormat - Every price starts with $ and has two decimals @ui @products @TC42 @P2 @extended (5.3s)
+  ok 134 [webkit] › .features-gen\UI\Products.feature.spec.js:31:7 › Products page › TC45 Products-DefaultSort - Products are sorted by name A to Z after login @ui @products @TC45 @P2 @extended (6.2s)
+  ok 135 [webkit] › .features-gen\UI\Products.feature.spec.js:18:7 › Products page › TC43 Products-OpenByName - Clicking a product name opens its product page with the same details @ui @products @TC43 @P2 @extended (6.9s)
+  ok 136 [webkit] › .features-gen\UI\Products.feature.spec.js:36:7 › Products page › TC46 Products-FooterLinks - Footer social links open the Sauce Labs pages in a new tab @ui @products @TC46 @P3 @extended (5.4s)
+  ok 137 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:8:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC05 Sorting - "Name (A to Z)" orders the entire product list @ui @catalogue @TC05 @P2 @core (7.2s)
+  x  138 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core (7.1s)
+  ok 139 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:18:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC07 Sorting - "Price (low to high)" orders the entire product list @ui @catalogue @TC07 @smoke @P1 @core (6.9s)
+  ok 140 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:56:7 › Product catalogue sorting › TC47 Sorting-KeepsCartState - Products in the cart still show "Remove" after sorting @ui @catalogue @TC47 @P2 @extended (3.2s)
+  ok 141 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:28:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC08 Sorting - "Price (high to low)" orders the entire product list @ui @catalogue @TC08 @P2 @core (8.0s)
+  ok 142 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:65:7 › Product catalogue sorting › TC48 Sorting-ManyChanges - Every sort is correct when the sort is changed many times @ui @catalogue @TC48 @P3 @extended (10.8s)
+  ok 143 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:38:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC06 Sorting - "Name (Z to A)" orders the entire product list @ui @catalogue @TC06 @P2 @core (7.7s)
+  ok 144 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:6:7 › Session handling and protected pages › TC88 Session-Refresh - Refreshing a page keeps the user logged in on the same page @ui @security @TC88 @P2 @extended (8.1s)
+  ok 145 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:51:9 › Session handling and protected pages › <id> Session-DeepLink - Unauthenticated deep link to <path> shows the login page › TC91 Session-DeepLink - Unauthenticated deep link to /checkout-complete.html shows the login page @ui @security @TC91 @P1 @extended (4.0s)
+  ok 147 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:59:9 › Session handling and protected pages › <id> Session-DeepLink - Unauthenticated deep link to <path> shows the login page › TC92 Session-DeepLink - Unauthenticated deep link to /inventory-item.html shows the login page @ui @security @TC92 @P1 @extended (2.4s)
+  ok 146 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:15:7 › Session handling and protected pages › TC21 Session-Logout - After logout, direct navigation to /inventory.html does not show the Products page @ui @security @TC21 @smoke @P1 @core (8.3s)
+  ok 148 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:69:7 › Session handling and protected pages › TC93 Session-BackAfterLogout - Browser Back after logout does not show the Products page @ui @security @TC93 @P1 @extended (6.8s)
+  ok 149 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:27:9 › Session handling and protected pages › <id> Session-DeepLink - Unauthenticated deep link to <path> shows the login page › TC22 Session-DeepLink - Unauthenticated deep link to /cart.html shows the login page @ui @security @TC22 @P1 @core (3.2s)
+  ok 151 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:35:9 › Session handling and protected pages › <id> Session-DeepLink - Unauthenticated deep link to <path> shows the login page › TC89 Session-DeepLink - Unauthenticated deep link to /checkout-step-one.html shows the login page @ui @security @TC89 @P1 @extended (2.7s)
+  ok 150 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:78:7 › Session handling and protected pages › TC94 Session-Timeout - After the session expires, the next click goes to the login page @ui @security @TC94 @P2 @extended (5.5s)
+  ok 152 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:43:9 › Session handling and protected pages › <id> Session-DeepLink - Unauthenticated deep link to <path> shows the login page › TC90 Session-DeepLink - Unauthenticated deep link to /checkout-step-two.html shows the login page @ui @security @TC90 @P1 @extended (2.6s)
+
+
+  1) [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:111:7 › Accessibility › AC06 Keyboard-CartLink - The cart link can receive keyboard focus @accessibility @AC06 @P1 @known-defect @AC-BUG-02 › Then the cart link should be able to receive keyboard focus 
+
+    Error: cart link should be focusable; it is <a class="shopping_cart_link" data-test="shopping-cart-link" role="button" aria-label="Cart, empty"></a>
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at ..\src\test\steps\domains\accessibility.steps.ts:275
+
+      273 |     return { focused: document.activeElement === element, html: element.outerHTML.slice(0, 120) };
+      274 |   });
+    > 275 |   expect(link.focused, `cart link should be focusable; it is ${link.html}`).toBe(true);
+          |                                                                             ^
+      276 | });
+      277 |
+      278 | // ══════════════════════════════════════════════════════════════════════════════
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\accessibility.steps.ts:275:77)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Accessibility\Accessibility.feature.spec.js:113:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-bc388--can-receive-keyboard-focus-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-bc388--can-receive-keyboard-focus-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Accessibility-Accessibilit-bc388--can-receive-keyboard-focus-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-bc388--can-receive-keyboard-focus-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Accessibility-Accessibilit-bc388--can-receive-keyboard-focus-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:118:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Login screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 › Then the controls "Username field, Password field, Login button" should show a visible focus indicator when reached with Tab 
+
+    Error: controls whose appearance does not change on focus
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "Username field",
+    +   "Password field",
+    +   "Login button",
+    + ]
+
+       at ..\src\test\steps\domains\accessibility.steps.ts:311
+
+      309 |       }
+      310 |     }
+    > 311 |     expect(withoutVisibleFocus, 'controls whose appearance does not change on focus').toEqual([]);
+          |                                                                                       ^
+      312 |   },
+      313 | );
+      314 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\accessibility.steps.ts:311:87)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Accessibility\Accessibility.feature.spec.js:120:7
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-84c4b-w-a-visible-focus-indicator-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-84c4b-w-a-visible-focus-indicator-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Accessibility-Accessibilit-84c4b-w-a-visible-focus-indicator-webkit\error-context.md
+
+    attachment #7: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-84c4b-w-a-visible-focus-indicator-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Accessibility-Accessibilit-84c4b-w-a-visible-focus-indicator-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:123:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Products screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 › Then the controls "Sort control, Add to cart button" should show a visible focus indicator when reached with Tab 
+
+    Error: controls whose appearance does not change on focus
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "Sort control",
+    +   "Add to cart button",
+    + ]
+
+       at ..\src\test\steps\domains\accessibility.steps.ts:311
+
+      309 |       }
+      310 |     }
+    > 311 |     expect(withoutVisibleFocus, 'controls whose appearance does not change on focus').toEqual([]);
+          |                                                                                       ^
+      312 |   },
+      313 | );
+      314 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\accessibility.steps.ts:311:87)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Accessibility\Accessibility.feature.spec.js:125:7
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-6219f-w-a-visible-focus-indicator-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-6219f-w-a-visible-focus-indicator-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Accessibility-Accessibilit-6219f-w-a-visible-focus-indicator-webkit\error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-6219f-w-a-visible-focus-indicator-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Accessibility-Accessibilit-6219f-w-a-visible-focus-indicator-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:128:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Cart with item screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 › Then the controls "Continue Shopping button, Checkout button" should show a visible focus indicator when reached with Tab 
+
+    Error: controls whose appearance does not change on focus
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "Continue Shopping button",
+    +   "Checkout button",
+    + ]
+
+       at ..\src\test\steps\domains\accessibility.steps.ts:311
+
+      309 |       }
+      310 |     }
+    > 311 |     expect(withoutVisibleFocus, 'controls whose appearance does not change on focus').toEqual([]);
+          |                                                                                       ^
+      312 |   },
+      313 | );
+      314 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\accessibility.steps.ts:311:87)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Accessibility\Accessibility.feature.spec.js:130:7
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-0fc59-w-a-visible-focus-indicator-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-0fc59-w-a-visible-focus-indicator-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Accessibility-Accessibilit-0fc59-w-a-visible-focus-indicator-webkit\error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-0fc59-w-a-visible-focus-indicator-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Accessibility-Accessibilit-0fc59-w-a-visible-focus-indicator-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:133:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Checkout information screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 › Then the controls "First Name field, Continue button" should show a visible focus indicator when reached with Tab 
+
+    Error: controls whose appearance does not change on focus
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "First Name field",
+    +   "Continue button",
+    + ]
+
+       at ..\src\test\steps\domains\accessibility.steps.ts:311
+
+      309 |       }
+      310 |     }
+    > 311 |     expect(withoutVisibleFocus, 'controls whose appearance does not change on focus').toEqual([]);
+          |                                                                                       ^
+      312 |   },
+      313 | );
+      314 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\accessibility.steps.ts:311:87)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Accessibility\Accessibility.feature.spec.js:135:7
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-a7b4f-w-a-visible-focus-indicator-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-a7b4f-w-a-visible-focus-indicator-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Accessibility-Accessibilit-a7b4f-w-a-visible-focus-indicator-webkit\error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-a7b4f-w-a-visible-focus-indicator-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Accessibility-Accessibilit-a7b4f-w-a-visible-focus-indicator-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:171:7 › Accessibility › AC11 InputPurpose-Checkout - Checkout fields declare their input purpose @accessibility @AC11 @P2 @known-defect @AC-BUG-03 › Then the checkout fields should declare the autocomplete purposes "given-name", "family-name" and "postal-code" 
+
+    Error: checkout fields without the right autocomplete purpose
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "First Name: expected \"given-name\", got null",
+    +   "Last Name: expected \"family-name\", got null",
+    +   "Zip/Postal Code: expected \"postal-code\", got null",
+    + ]
+
+       at ..\src\test\steps\domains\accessibility.steps.ts:374
+
+      372 |       .filter(({ purpose, got }) => got !== purpose)
+      373 |       .map(({ field, purpose, got }) => `${field}: expected "${purpose}", got ${String(got)}`);
+    > 374 |     expect(wrong, 'checkout fields without the right autocomplete purpose').toEqual([]);
+          |                                                                             ^
+      375 |   },
+      376 | );
+      377 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\accessibility.steps.ts:374:77)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Accessibility\Accessibility.feature.spec.js:173:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-ec3ad-declare-their-input-purpose-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-ec3ad-declare-their-input-purpose-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Accessibility-Accessibilit-ec3ad-declare-their-input-purpose-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-ec3ad-declare-their-input-purpose-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Accessibility-Accessibilit-ec3ad-declare-their-input-purpose-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:183:7 › Accessibility › AC13 PageTitle-Unique - Every page has its own title @accessibility @AC13 @P2 @known-defect @AC-BUG-04 › Then every noted page title should be different 
+
+    Error: each page needs its own title so users know where they are. Titles: Login: "Swag Labs"; Products: "Swag Labs"; Cart with item: "Swag Labs"; Checkout information: "Swag Labs"
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 4
+    Received: 1
+
+       at ..\src\test\steps\domains\accessibility.steps.ts:425
+
+      423 |     new Set(titles).size,
+      424 |     `each page needs its own title so users know where they are. Titles: ${noted.join('; ')}`,
+    > 425 |   ).toBe(titles.length);
+          |     ^
+      426 | });
+      427 |
+      428 | // ══════════════════════════════════════════════════════════════════════════════
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\accessibility.steps.ts:425:5)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Accessibility\Accessibility.feature.spec.js:188:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-c1910-very-page-has-its-own-title-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-c1910-very-page-has-its-own-title-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Accessibility-Accessibilit-c1910-very-page-has-its-own-title-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Accessibility-Accessibilit-c1910-very-page-has-its-own-title-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Accessibility-Accessibilit-c1910-very-page-has-its-own-title-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [webkit] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 › Then the response header "Strict-Transport-Security" should contain "max-age=" 
+
+    Error: response should include the "Strict-Transport-Security" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:13:5
+
+    Error Context: test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f7253-browser-to-always-use-HTTPS-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [webkit] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 › Then the response should forbid framing by other sites 
+
+    Error: framing should be blocked; X-Frame-Options=missing, CSP frame-ancestors=missing
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+       at ..\src\test\steps\domains\security.steps.ts:95
+
+      93 |     `framing should be blocked; X-Frame-Options=${frameOptions ?? 'missing'}, ` +
+      94 |       `CSP frame-ancestors=${/frame-ancestors[^;]*/i.exec(csp)?.[0] ?? 'missing'}`,
+    > 95 |   ).toBe(true);
+         |     ^
+      96 | });
+      97 |
+      98 | // ══════════════════════════════════════════════════════════════════════════════
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:95:5)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:30:5
+
+    Error Context: test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f1579-t-allowed-to-frame-the-shop-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [webkit] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "Content-Security-Policy" should contain "default-src" 
+
+    Error: response should include the "Content-Security-Policy" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:37:7
+
+    Error Context: test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--4d83b-curity-Policy-header-is-set-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [webkit] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "X-Content-Type-Options" should contain "nosniff" 
+
+    Error: response should include the "X-Content-Type-Options" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:42:7
+
+    Error Context: test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--f04f8--Type-Options-header-is-set-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [webkit] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 › Then the response header "Referrer-Policy" should contain "" 
+
+    Error: response should include the "Referrer-Policy" header
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+       at ..\src\test\steps\domains\security.steps.ts:59
+
+      57 |   ({ testContext }, name: string, expected: string) => {
+      58 |     const value = headerValue(testContext.getValue<Record<string, string>>(RESPONSE_HEADERS), name);
+    > 59 |     expect(value, `response should include the "${name}" header`).toBeDefined();
+         |                                                                   ^
+      60 |     expect(value, `"${name}" should contain "${expected}"`).toContain(expected);
+      61 |   },
+      62 | );
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:59:67)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:47:7
+
+    Error Context: test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-webkit\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--dcff4-ferrer-Policy-header-is-set-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [webkit] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 › Then the session cookie should be set with the protections "Secure, SameSite, HttpOnly" 
+
+    Error: protections missing on the "session-username" cookie (it is written by page script, so it cannot be HttpOnly)
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 5
+
+    - Array []
+    + Array [
+    +   "Secure",
+    +   "SameSite",
+    +   "HttpOnly",
+    + ]
+
+       at ..\src\test\steps\domains\security.steps.ts:161
+
+      159 |       `protections missing on the "${SESSION_COOKIE}" cookie` +
+      160 |         (scriptWrite ? ' (it is written by page script, so it cannot be HttpOnly)' : ''),
+    > 161 |     ).toEqual([]);
+          |       ^
+      162 |   },
+      163 | );
+      164 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\security.steps.ts:161:7)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:55:5
+
+    attachment #1: session cookie as written by the page (text/plain) ──────────────────────────────
+    session-username=<value>; path=/; expires=Wed, 28 Oct 2026 05:30:28 GMT
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--91d98-ecure-SameSite-and-HttpOnly-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [webkit] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 › Then no products should be displayed 
+
+    Error: expect(locator).toBeHidden() failed
+
+    Locator:  getByTestId('title')
+    Expected: hidden
+    Received: visible
+    Timeout:  10000ms
+
+    Call log:
+      - Expect "toBeHidden" getByTestId('title') with timeout 10000ms
+      - waiting for getByTestId('title')
+        22 × locator resolved to <span class="title" data-test="title">Products</span>
+           - unexpected value "visible"
+
+
+       at ..\src\test\steps\domains\session.steps.ts:34
+
+      32 |
+      33 | Then('no products should be displayed', async ({ productsPage }) => {
+    > 34 |   await expect(productsPage.title).toBeHidden();
+         |                                    ^
+      35 |   await expect(productsPage.items).toHaveCount(0);
+      36 | });
+      37 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\session.steps.ts:34:36)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\Security\Security.feature.spec.js:69:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Security-Security.feature--e08ac-t-log-in-without-a-password-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [webkit] › .features-gen\UI\Cart.feature.spec.js:100:7 › Shopping cart › TC60 Cart-OtherUser - A different user does not see the previous user's cart @ui @cart @TC60 @P1 @security @known-defect @BUG-06 @extended › And the cart badge should be hidden 
+
+    Error: cart badge should be hidden when the cart is empty
+
+    expect(locator).toBeHidden() failed
+
+    Locator:  getByTestId('shopping-cart-badge')
+    Expected: hidden
+    Received: visible
+    Timeout:  10000ms
+
+    Call log:
+      - cart badge should be hidden when the cart is empty getByTestId('shopping-cart-badge') with timeout 10000ms
+      - waiting for getByTestId('shopping-cart-badge')
+        23 × locator resolved to <span class="shopping_cart_badge" data-test="shopping-cart-badge">2</span>
+           - unexpected value "visible"
+
+
+       at ..\src\test\pages\components\MenuComponent.ts:69
+
+      67 |         this.cartBadge,
+      68 |         'cart badge should be hidden when the cart is empty',
+    > 69 |       ).toBeHidden();
+         |         ^
+      70 |     } else {
+      71 |       await expect(this.cartBadge, `cart badge should show ${count}`).toHaveText(String(count));
+      72 |     }
+        at MenuComponent.expectCartCount (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\pages\components\MenuComponent.ts:69:9)
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\shared\common.steps.ts:83:14)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\Cart.feature.spec.js:106:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-Cart.feature-Shopping-c-5ac16-ee-the-previous-user-s-cart-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-Cart.feature-Shopping-c-5ac16-ee-the-previous-user-s-cart-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-Cart.feature-Shopping-c-5ac16-ee-the-previous-user-s-cart-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-Cart.feature-Shopping-c-5ac16-ee-the-previous-user-s-cart-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-Cart.feature-Shopping-c-5ac16-ee-the-previous-user-s-cart-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [webkit] › .features-gen\UI\Checkout.feature.spec.js:217:7 › Checkout › TC70 Checkout-SpacesOnly - Details made of spaces only are rejected @ui @checkout @TC70 @P2 @known-defect @BUG-02 @extended › Then a checkout error should be displayed 
+
+    Error: an error should block invalid details
+
+    expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('error')
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - an error should block invalid details getByTestId('error') with timeout 10000ms
+      - waiting for getByTestId('error')
+
+
+       at ..\src\test\steps\domains\checkout.steps.ts:66
+
+      64 | /** For inputs whose exact message is not specified (e.g. spaces only): any validation error. */
+      65 | Then('a checkout error should be displayed', async ({ checkoutPage }) => {
+    > 66 |   await expect(checkoutPage.errorMessage, 'an error should block invalid details').toBeVisible();
+         |                                                                                    ^
+      67 | });
+      68 |
+      69 | Then('I should see the checkout error {string}', async ({ checkoutPage }, message: string) => {
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\checkout.steps.ts:66:84)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\Checkout.feature.spec.js:222:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-Checkout.feature-Checko-c2269-of-spaces-only-are-rejected-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-Checkout.feature-Checko-c2269-of-spaces-only-are-rejected-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-Checkout.feature-Checko-c2269-of-spaces-only-are-rejected-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-Checkout.feature-Checko-c2269-of-spaces-only-are-rejected-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-Checkout.feature-Checko-c2269-of-spaces-only-are-rejected-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [webkit] › .features-gen\UI\Checkout.feature.spec.js:236:7 › Checkout › TC72 Checkout-EmptyCartOverview - An order cannot be finished when the cart is empty @ui @checkout @TC72 @P2 @known-defect @BUG-03 @extended › Then it should not be possible to finish an order with an empty cart 
+
+    Error: Finish must not be offered for an empty cart
+
+    expect(locator).toBeHidden() failed
+
+    Locator:  getByRole('button', { name: 'Finish' })
+    Expected: hidden
+    Received: visible
+    Timeout:  10000ms
+
+    Call log:
+      - Finish must not be offered for an empty cart getByRole('button', { name: 'Finish' }) with timeout 10000ms
+      - waiting for getByRole('button', { name: 'Finish' })
+        21 × locator resolved to <button id="finish" name="finish" data-test="finish" class="btn btn_action btn_medium cart_button">Finish</button>
+           - unexpected value "visible"
+
+
+       at ..\src\test\steps\domains\checkout.steps.ts:202
+
+      200 |       checkoutPage.finishButton,
+      201 |       'Finish must not be offered for an empty cart',
+    > 202 |     ).toBeHidden();
+          |       ^
+      203 |   },
+      204 | );
+      205 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\checkout.steps.ts:202:7)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\Checkout.feature.spec.js:238:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-Checkout.feature-Checko-c97d9-shed-when-the-cart-is-empty-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-Checkout.feature-Checko-c97d9-shed-when-the-cart-is-empty-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-Checkout.feature-Checko-c97d9-shed-when-the-cart-is-empty-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-Checkout.feature-Checko-c97d9-shed-when-the-cart-is-empty-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-Checkout.feature-Checko-c97d9-shed-when-the-cart-is-empty-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [webkit] › .features-gen\UI\Checkout.feature.spec.js:241:7 › Checkout › TC73 Checkout-EmptyCartButton - Checkout is blocked when the cart is empty @ui @checkout @TC73 @P2 @known-defect @BUG-03 @extended › Then checkout should be blocked for an empty cart 
+
+    Error: checkout must not open with an empty cart
+
+    expect(page).not.toHaveURL(expected) failed
+
+    Expected pattern: not /checkout-step-one\.html/
+    Received string: "https://www.saucedemo.com/checkout-step-one.html"
+    Timeout: 10000ms
+
+    Call log:
+      - checkout must not open with an empty cart with timeout 10000ms
+        21 × locator resolved to <html lang="en">…</html>
+           - unexpected value "https://www.saucedemo.com/checkout-step-one.html"
+
+
+       at ..\src\test\steps\domains\checkout.steps.ts:207
+
+      205 |
+      206 | Then('checkout should be blocked for an empty cart', async ({ page }) => {
+    > 207 |   await expect(page, 'checkout must not open with an empty cart').not.toHaveURL(
+          |                                                                       ^
+      208 |     /checkout-step-one\.html/,
+      209 |   );
+      210 | });
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\checkout.steps.ts:207:71)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\Checkout.feature.spec.js:245:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-Checkout.feature-Checko-5c9bc-cked-when-the-cart-is-empty-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-Checkout.feature-Checko-5c9bc-cked-when-the-cart-is-empty-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-Checkout.feature-Checko-5c9bc-cked-when-the-cart-is-empty-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-Checkout.feature-Checko-5c9bc-cked-when-the-cart-is-empty-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-Checkout.feature-Checko-5c9bc-cked-when-the-cart-is-empty-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [webkit] › .features-gen\UI\Navigation.feature.spec.js:31:7 › Navigation and menu › TC86 Navigation-ResetAppState - "Reset App State" empties the cart and resets every product button @ui @navigation @TC86 @P2 @known-defect @BUG-04 @extended › And no product should show a "Remove" button 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByTestId('inventory-item').getByRole('button', { name: 'Remove' })
+    Expected: 0
+    Received: 2
+    Timeout:  10000ms
+
+    Call log:
+      - Expect "toHaveCount" getByTestId('inventory-item').getByRole('button', { name: 'Remove' }) with timeout 10000ms
+      - waiting for getByTestId('inventory-item').getByRole('button', { name: 'Remove' })
+        22 × locator resolved to 2 elements
+           - unexpected value "2"
+
+
+       at ..\src\test\steps\domains\cart.steps.ts:45
+
+      43 | Then('no product should show a {string} button', async ({ productsPage }, label: string) => {
+      44 |   if (label !== 'Remove') throw new Error(`Only the "Remove" button is supported, got "${label}".`);
+    > 45 |   await expect(productsPage.removeButtons).toHaveCount(0);
+         |                                            ^
+      46 | });
+      47 |
+      48 | /** Exactly these products show "Remove"; every other product shows "Add to cart". */
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\cart.steps.ts:45:44)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\Navigation.feature.spec.js:36:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-Navigation.feature-Navi-68f2e-resets-every-product-button-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-Navigation.feature-Navi-68f2e-resets-every-product-button-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-Navigation.feature-Navi-68f2e-resets-every-product-button-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-Navigation.feature-Navi-68f2e-resets-every-product-button-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-Navigation.feature-Navi-68f2e-resets-every-product-button-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [webkit] › .features-gen\UI\OrderCompletion.feature.spec.js:49:7 › Order completion › TC82 OrderComplete-TwoTabs - Finishing the same cart in a second tab does not confirm a second order @ui @order-completion @TC82 @P2 @known-defect @BUG-07 @extended › Then the second tab should not show another order confirmation 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: the cart was already ordered in the first tab, so a second "Thank you" means a duplicate order
+
+    expect(locator).toBeHidden() failed
+
+    Locator:  getByTestId('complete-header')
+    Expected: hidden
+    Received: visible
+    Timeout:  10000ms
+
+    Call log:
+      - the cart was already ordered in the first tab, so a second "Thank you" means a duplicate order getByTestId('complete-header') with timeout 10000ms
+      - waiting for getByTestId('complete-header')
+        16 × locator resolved to <h2 class="complete-header" data-test="complete-header">Thank you for your order!</h2>
+           - unexpected value "visible"
+
+
+       at ..\src\test\steps\domains\order-completion.steps.ts:83
+
+      81 |     second.completeHeader,
+      82 |     'the cart was already ordered in the first tab, so a second "Thank you" means a duplicate order',
+    > 83 |   ).toBeHidden();
+         |     ^
+      84 | });
+      85 |
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\order-completion.steps.ts:83:5)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\OrderCompletion.feature.spec.js:54:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-OrderCompletion.feature-c7103--not-confirm-a-second-order-webkit\test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-OrderCompletion.feature-c7103--not-confirm-a-second-order-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-OrderCompletion.feature-c7103--not-confirm-a-second-order-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-OrderCompletion.feature-c7103--not-confirm-a-second-order-webkit\video-1.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-OrderCompletion.feature-c7103--not-confirm-a-second-order-webkit\error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-OrderCompletion.feature-c7103--not-confirm-a-second-order-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-OrderCompletion.feature-c7103--not-confirm-a-second-order-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [webkit] › .features-gen\UI\Personas.feature.spec.js:6:7 › Demo personas › TC95 Persona-ErrorUser - error_user can add, remove and order a product like standard_user @ui @personas @TC95 @P2 @known-defect @BUG-08 @extended › When I remove "Sauce Labs Onesie" from the cart on the Products page 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByTestId('inventory-item').filter({ has: getByText('Sauce Labs Onesie', { exact: true }) }).getByRole('button', { name: 'Add to cart' })
+    Expected: visible
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByTestId('inventory-item').filter({ has: getByText('Sauce Labs Onesie', { exact: true }) }).getByRole('button', { name: 'Add to cart' }) with timeout 10000ms
+      - waiting for getByTestId('inventory-item').filter({ has: getByText('Sauce Labs Onesie', { exact: true }) }).getByRole('button', { name: 'Add to cart' })
+
+
+       at ..\src\test\pages\ProductsPage.ts:63
+
+      61 |   async removeFromCart(name: string): Promise<void> {
+      62 |     await this.removeButton(name).click();
+    > 63 |     await expect(this.addToCartButton(name)).toBeVisible();
+         |                                              ^
+      64 |   }
+      65 |
+      66 |   /** Adds each product and returns the name/price shown on the Products page at selection time. */
+        at ProductsPage.removeFromCart (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\pages\ProductsPage.ts:63:46)
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\cart.steps.ts:12:5)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\Personas.feature.spec.js:10:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-5b6d9--product-like-standard-user-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-5b6d9--product-like-standard-user-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-Personas.feature-Demo-p-5b6d9--product-like-standard-user-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-5b6d9--product-like-standard-user-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-Personas.feature-Demo-p-5b6d9--product-like-standard-user-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  22) [webkit] › .features-gen\UI\Personas.feature.spec.js:21:7 › Demo personas › TC96 Persona-ProblemUserCheckout - problem_user's checkout form keeps exactly what was typed @ui @personas @TC96 @P2 @known-defect @BUG-09 @extended › And I submit valid checkout information 
+
+    Error: last name should keep the typed value
+
+    expect(locator).toHaveValue(expected) failed
+
+    Locator:  getByRole('textbox', { name: 'Last Name' })
+    Expected: "Customer"
+    Received: ""
+    Timeout:  1000ms
+
+    Call log:
+      - Expect "toHaveValue" getByRole('textbox', { name: 'Last Name' }) with timeout 1000ms
+      - waiting for getByRole('textbox', { name: 'Last Name' })
+        5 × locator resolved to <input value="" type="text" id="last-name" name="lastName" autocorrect="off" data-test="lastName" autocapitalize="none" aria-label="Last Name" placeholder="Last Name" class="input_error form_input"/>
+          - unexpected value ""
+
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+       at ..\src\test\pages\CheckoutPage.ts:98
+
+       96 |         if ((await input.inputValue()) !== value) await input.fill(value);
+       97 |         await expect(input).toHaveValue(value, { timeout: 1_000 });
+    >  98 |       }, `${label} should keep the typed value`).toPass({ timeout: 5_000 });
+          |                                                  ^
+       99 |     }
+      100 |     await expect(this.firstNameInput, 'first name should keep the typed value').toHaveValue(
+      101 |       customer.firstName,
+        at CheckoutPage.fillInformation (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\pages\CheckoutPage.ts:98:50)
+        at CheckoutPage.submitInformation (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\pages\CheckoutPage.ts:112:5)
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\checkout.steps.ts:35:3)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\Personas.feature.spec.js:26:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-c32ac-eeps-exactly-what-was-typed-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-c32ac-eeps-exactly-what-was-typed-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-Personas.feature-Demo-p-c32ac-eeps-exactly-what-was-typed-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-c32ac-eeps-exactly-what-was-typed-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-Personas.feature-Demo-p-c32ac-eeps-exactly-what-was-typed-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  23) [webkit] › .features-gen\UI\Personas.feature.spec.js:30:7 › Demo personas › TC97 Persona-ProblemUserImages - problem_user sees the correct image for every product @ui @personas @TC97 @P2 @known-defect @BUG-10 @extended › And every product should show the same image as noted 
+
+    Error: each product should keep its own image
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+      Array [
+    -   "/assets/sauce-backpack-1200x1500-CjRW-Djj.jpg",
+    -   "/assets/bike-light-1200x1500-DxcZRFOA.jpg",
+    -   "/assets/bolt-shirt-1200x1500-mR0ldpVS.jpg",
+    -   "/assets/sauce-pullover-1200x1500-BfbI-PSd.jpg",
+    -   "/assets/red-onesie-1200x1500-BrSuq0ic.jpg",
+    -   "/assets/red-tatt-1200x1500-E-qp6aYf.jpg",
+    +   "/assets/sl-404-Cq1a9k9X.jpg",
+    +   "/assets/sl-404-Cq1a9k9X.jpg",
+    +   "/assets/sl-404-Cq1a9k9X.jpg",
+    +   "/assets/sl-404-Cq1a9k9X.jpg",
+    +   "/assets/sl-404-Cq1a9k9X.jpg",
+    +   "/assets/sl-404-Cq1a9k9X.jpg",
+      ]
+
+       at ..\src\test\steps\domains\personas.steps.ts:46
+
+      44 |
+      45 | Then('every product should show the same image as noted', async ({ productsPage, testContext }) => {
+    > 46 |   expect(await productsPage.getImageSources(), 'each product should keep its own image').toEqual(
+         |                                                                                          ^
+      47 |     testContext.getValue<Baseline>(BASELINE).images,
+      48 |   );
+      49 | });
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\personas.steps.ts:46:90)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\Personas.feature.spec.js:36:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-904b9-ect-image-for-every-product-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-904b9-ect-image-for-every-product-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-Personas.feature-Demo-p-904b9-ect-image-for-every-product-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-904b9-ect-image-for-every-product-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-Personas.feature-Demo-p-904b9-ect-image-for-every-product-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24) [webkit] › .features-gen\UI\Personas.feature.spec.js:39:7 › Demo personas › TC98 Persona-VisualUser - visual_user sees the same products, prices, images and layout as standard_user @ui @personas @TC98 @P3 @known-defect @BUG-11 @extended › And the product names and prices should be the same as noted 
+
+    Error: names and prices
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+      Array [
+        Object {
+          "name": "Sauce Labs Backpack",
+    -     "price": "$29.99",
+    +     "price": "$77.76",
+        },
+        Object {
+          "name": "Sauce Labs Bike Light",
+    -     "price": "$9.99",
+    +     "price": "$17.04",
+        },
+        Object {
+          "name": "Sauce Labs Bolt T-Shirt",
+    -     "price": "$15.99",
+    +     "price": "$98.44",
+        },
+        Object {
+          "name": "Sauce Labs Fleece Jacket",
+    -     "price": "$49.99",
+    +     "price": "$75.96",
+        },
+        Object {
+          "name": "Sauce Labs Onesie",
+    -     "price": "$7.99",
+    +     "price": "$74.47",
+        },
+        Object {
+          "name": "Test.allTheThings() T-Shirt (Red)",
+    -     "price": "$15.99",
+    +     "price": "$97.66",
+        },
+      ]
+
+       at ..\src\test\steps\domains\personas.steps.ts:54
+
+      52 |   'the product names and prices should be the same as noted',
+      53 |   async ({ productsPage, testContext }) => {
+    > 54 |     expect(await productsPage.getDisplayedProducts(), 'names and prices').toEqual(
+         |                                                                           ^
+      55 |       testContext.getValue<Baseline>(BASELINE).products,
+      56 |     );
+      57 |   },
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\personas.steps.ts:54:75)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\Personas.feature.spec.js:45:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-16965-and-layout-as-standard-user-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-16965-and-layout-as-standard-user-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-Personas.feature-Demo-p-16965-and-layout-as-standard-user-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-Personas.feature-Demo-p-16965-and-layout-as-standard-user-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-Personas.feature-Demo-p-16965-and-layout-as-standard-user-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  25) [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core › Then the product prices should be in ascending order 
+
+    Error: Product prices should be ascending. Full list: [29.99, 9.99, 15.99, 49.99, 7.99, 15.99]
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "position 1 \"29.99\" before 2 \"9.99\"",
+    +   "position 4 \"49.99\" before 5 \"7.99\"",
+    + ]
+
+       at ..\src\test\support\assertions.ts:46
+
+      44 |     outOfOrder,
+      45 |     `${label} should be ${direction}. Full list: [${values.map(String).join(', ')}]`,
+    > 46 |   ).toEqual([]);
+         |     ^
+      47 | }
+      48 |
+      49 | const lineKey = (item: LineItem): string => `${item.name}|${item.priceCents}`;
+        at expectSorted (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\support\assertions.ts:46:5)
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\catalogue.steps.ts:46:19)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\ProductSorting.feature.spec.js:53:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  25 failed
+    [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:111:7 › Accessibility › AC06 Keyboard-CartLink - The cart link can receive keyboard focus @accessibility @AC06 @P1 @known-defect @AC-BUG-02 
+    [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:118:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Login screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 
+    [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:123:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Products screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 
+    [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:128:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Cart with item screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 
+    [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:133:9 › Accessibility › AC07 Focus-Visible - Controls on the <screen> screen show a visible focus indicator › AC07 Focus-Visible - Controls on the Checkout information screen show a visible focus indicator @accessibility @AC07 @P1 @known-defect @AC-BUG-01 
+    [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:171:7 › Accessibility › AC11 InputPurpose-Checkout - Checkout fields declare their input purpose @accessibility @AC11 @P2 @known-defect @AC-BUG-03 
+    [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:183:7 › Accessibility › AC13 PageTitle-Unique - Every page has its own title @accessibility @AC13 @P2 @known-defect @AC-BUG-04 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:11:7 › Security › SC02 Transport-HSTS - HTTPS responses tell the browser to always use HTTPS @security @SC02 @P1 @known-defect @SC-BUG-01 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:28:7 › Security › SC04 Headers-Clickjacking - Other sites are not allowed to frame the shop @security @SC04 @P1 @known-defect @SC-BUG-02 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:35:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Content-Security-Policy - The Content-Security-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:40:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-X-Content-Type-Options - The X-Content-Type-Options header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:45:9 › Security › SC05 Headers-<header> - The <header> header is set › SC05 Headers-Referrer-Policy - The Referrer-Policy header is set @security @SC05 @P2 @known-defect @SC-BUG-03 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:52:7 › Security › SC06 Session-CookieFlags - The session cookie is Secure, SameSite and HttpOnly @security @SC06 @P1 @known-defect @SC-BUG-04 
+    [webkit] › .features-gen\Security\Security.feature.spec.js:65:7 › Security › SC08 Auth-ForgedCookie - A hand-made session cookie for a valid user does not log in without a password @security @SC08 @P1 @known-defect @SC-BUG-05 
+    [webkit] › .features-gen\UI\Cart.feature.spec.js:100:7 › Shopping cart › TC60 Cart-OtherUser - A different user does not see the previous user's cart @ui @cart @TC60 @P1 @security @known-defect @BUG-06 @extended 
+    [webkit] › .features-gen\UI\Checkout.feature.spec.js:217:7 › Checkout › TC70 Checkout-SpacesOnly - Details made of spaces only are rejected @ui @checkout @TC70 @P2 @known-defect @BUG-02 @extended 
+    [webkit] › .features-gen\UI\Checkout.feature.spec.js:236:7 › Checkout › TC72 Checkout-EmptyCartOverview - An order cannot be finished when the cart is empty @ui @checkout @TC72 @P2 @known-defect @BUG-03 @extended 
+    [webkit] › .features-gen\UI\Checkout.feature.spec.js:241:7 › Checkout › TC73 Checkout-EmptyCartButton - Checkout is blocked when the cart is empty @ui @checkout @TC73 @P2 @known-defect @BUG-03 @extended 
+    [webkit] › .features-gen\UI\Navigation.feature.spec.js:31:7 › Navigation and menu › TC86 Navigation-ResetAppState - "Reset App State" empties the cart and resets every product button @ui @navigation @TC86 @P2 @known-defect @BUG-04 @extended 
+    [webkit] › .features-gen\UI\OrderCompletion.feature.spec.js:49:7 › Order completion › TC82 OrderComplete-TwoTabs - Finishing the same cart in a second tab does not confirm a second order @ui @order-completion @TC82 @P2 @known-defect @BUG-07 @extended 
+    [webkit] › .features-gen\UI\Personas.feature.spec.js:6:7 › Demo personas › TC95 Persona-ErrorUser - error_user can add, remove and order a product like standard_user @ui @personas @TC95 @P2 @known-defect @BUG-08 @extended 
+    [webkit] › .features-gen\UI\Personas.feature.spec.js:21:7 › Demo personas › TC96 Persona-ProblemUserCheckout - problem_user's checkout form keeps exactly what was typed @ui @personas @TC96 @P2 @known-defect @BUG-09 @extended 
+    [webkit] › .features-gen\UI\Personas.feature.spec.js:30:7 › Demo personas › TC97 Persona-ProblemUserImages - problem_user sees the correct image for every product @ui @personas @TC97 @P2 @known-defect @BUG-10 @extended 
+    [webkit] › .features-gen\UI\Personas.feature.spec.js:39:7 › Demo personas › TC98 Persona-VisualUser - visual_user sees the same products, prices, images and layout as standard_user @ui @personas @TC98 @P3 @known-defect @BUG-11 @extended 
+    [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core 
+  1 skipped
+  126 passed (8.1m)

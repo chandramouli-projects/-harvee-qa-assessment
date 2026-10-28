@@ -25,15 +25,21 @@ export class CheckoutPage extends BasePage {
   readonly continueButton: Locator;
   readonly cancelButton: Locator;
   readonly errorMessage: Locator;
+  readonly errorCloseButton: Locator;
   // Step two - overview
   readonly items: Locator;
+  readonly paymentInfo: Locator;
+  readonly shippingInfo: Locator;
   readonly subtotalLabel: Locator;
   readonly taxLabel: Locator;
   readonly totalLabel: Locator;
   readonly finishButton: Locator;
   // Complete
   readonly completeHeader: Locator;
+  readonly completeText: Locator;
+  readonly ponyImage: Locator;
   readonly backHomeButton: Locator;
+  readonly generatePdfButton: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -44,13 +50,28 @@ export class CheckoutPage extends BasePage {
     this.continueButton = page.getByRole('button', { name: 'Continue' });
     this.cancelButton = page.getByRole('button', { name: 'Cancel' });
     this.errorMessage = page.getByTestId('error');
+    this.errorCloseButton = page.getByTestId('error-button');
     this.items = page.getByTestId('cart-list').getByTestId('inventory-item');
+    this.paymentInfo = page.getByTestId('payment-info-value');
+    this.shippingInfo = page.getByTestId('shipping-info-value');
     this.subtotalLabel = page.getByTestId('subtotal-label');
     this.taxLabel = page.getByTestId('tax-label');
     this.totalLabel = page.getByTestId('total-label');
     this.finishButton = page.getByRole('button', { name: 'Finish' });
     this.completeHeader = page.getByTestId('complete-header');
+    this.completeText = page.getByTestId('complete-text');
+    this.ponyImage = page.getByRole('img', { name: 'Pony Express' });
     this.backHomeButton = page.getByRole('button', { name: 'Back Home' });
+    this.generatePdfButton = page.getByRole('button', { name: 'Generate PDF order' });
+  }
+
+  async closeError(): Promise<void> {
+    await this.errorCloseButton.click();
+    await expect(this.errorMessage).toBeHidden();
+  }
+
+  async doubleClickFinish(): Promise<void> {
+    await this.finishButton.dblclick();
   }
 
   async expectStep(step: CheckoutStep): Promise<void> {
@@ -59,14 +80,23 @@ export class CheckoutPage extends BasePage {
   }
 
   /**
-   * Waits for the information step before typing, then asserts every value stuck. Filling while the
-   * form was still mounting lost the first value in WebKit (see docs/known-limitations.md).
+   * Waits for the information step, types each value (typing again if WebKit dropped it while the
+   * form was still mounting — see docs/known-limitations.md), then asserts that every value stuck.
+   * A field that keeps losing its value (e.g. the problem_user bug) still fails with a clear message.
    */
   async fillInformation(customer: Customer): Promise<void> {
     await this.expectStep('information');
-    await this.firstNameInput.fill(customer.firstName);
-    await this.lastNameInput.fill(customer.lastName);
-    await this.postalCodeInput.fill(customer.postalCode);
+    const fields: [string, Locator, string][] = [
+      ['first name', this.firstNameInput, customer.firstName],
+      ['last name', this.lastNameInput, customer.lastName],
+      ['postal code', this.postalCodeInput, customer.postalCode],
+    ];
+    for (const [label, input, value] of fields) {
+      await expect(async () => {
+        if ((await input.inputValue()) !== value) await input.fill(value);
+        await expect(input).toHaveValue(value, { timeout: 1_000 });
+      }, `${label} should keep the typed value`).toPass({ timeout: 5_000 });
+    }
     await expect(this.firstNameInput, 'first name should keep the typed value').toHaveValue(
       customer.firstName,
     );

@@ -16,6 +16,8 @@ A Playwright + TypeScript BDD suite for https://www.saucedemo.com. Scenarios are
 | `src/core/base/` | `BasePage`: navigation, URL, viewport and keyboard helpers shared by all page objects. |
 | `src/core/support/` | `base-step.ts` (single import surface for steps), `fixtures.ts` (page-object and `testContext` fixtures), `hooks.ts` (scenario logging), `test-context.ts` (scenario data store), `logger.ts` (log4js). |
 | `src/test/features/UI/` | Gherkin `.feature` files, one per functional area. Each scenario is tagged with its manual case ID. |
+| `src/test/features/Accessibility/` | `Accessibility.feature`: strict WCAG 2.2 A/AA checks (AC01–AC15), kept apart from the functional features. |
+| `src/test/features/Security/` | `Security.feature`: passive security checks (SC01–SC14) — headers, HTTPS, cookies, storage, input handling. |
 | `src/test/steps/shared/` | Steps used by several features (login, page checks, cart badge, adding products). |
 | `src/test/steps/domains/` | Steps unique to one area (auth, catalogue, cart, checkout, session, accessibility). |
 | `src/test/pages/` | Page objects (`LoginPage`, `ProductsPage`, `CartPage`, `CheckoutPage`) and `components/MenuComponent`; `index.ts` re-exports them. |
@@ -29,7 +31,7 @@ A Playwright + TypeScript BDD suite for https://www.saucedemo.com. Scenarios are
 ## Runtime pipeline
 
 ```
-src/test/features/UI/*.feature
+src/test/features/{UI,Accessibility,Security}/*.feature
     │  npx bddgen  ◄── playwright.config.ts (defineBddConfig)
     ▼
 .features-gen/UI/*.feature.spec.js   (generated Playwright tests)
@@ -46,7 +48,7 @@ reports/spark-report/index.html
 ```
 
 1. `config/testConfig.ts` loads `config/.env.<ENV>` (default `demo`) and validates every value. A missing or invalid value stops the run with a message that names the variable but never prints its value.
-2. `bddgen` turns each scenario (and each `Examples` row) into a Playwright test. Gherkin tags become Playwright tags, so `--grep @TC15` or `--grep @smoke` select scenarios. `@fail` becomes `test.fail()`.
+2. `bddgen` turns each scenario (and each `Examples` row) into a Playwright test. Gherkin tags become Playwright tags, so `--grep @TC12` or `--grep @smoke` select scenarios. `@fail` becomes `test.fail()`.
 3. Each scenario gets a **fresh browser context and page**, so cookies and the localStorage cart never leak between scenarios, and scenarios can run in any order or in parallel.
 4. Steps receive page objects and the scenario's `testContext` as fixtures. Page objects use role, label and `data-test` locators with web-first assertions.
 5. `hooks.ts` logs scenario start/finish and duration to `logs/test-execution.log`. Screenshots, video and trace on failure come from `playwright.config.ts`.

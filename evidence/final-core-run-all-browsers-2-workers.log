@@ -1,0 +1,230 @@
+
+> harvee-qa-assessment@1.0.0 test:core
+> bddgen && playwright test --grep @core --reporter=list
+
+
+Running 78 tests using 2 workers
+
+  ok  2 [chromium] › .features-gen\Accessibility\Accessibility.feature.spec.js:203:9 › Accessibility › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at <device> width › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at mobile width @accessibility @TC24 @AC14 @P3 @core (6.3s)
+  ok  1 [chromium] › .features-gen\Accessibility\Accessibility.feature.spec.js:83:7 › Accessibility › TC23 AC03 Keyboard-Login - A user can log in and add a product using only the keyboard @accessibility @TC23 @AC03 @P1 @core (6.4s)
+  ok  3 [chromium] › .features-gen\UI\Authentication.feature.spec.js:10:7 › Authentication › TC01 Login-HappyPath - Standard user logs in and reaches the Products page @ui @authentication @TC01 @smoke @P1 @core (1.7s)
+  ok  4 [chromium] › .features-gen\Accessibility\Accessibility.feature.spec.js:193:9 › Accessibility › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at <device> width › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at desktop width @accessibility @TC24 @AC14 @P3 @core (1.7s)
+  ok  5 [chromium] › .features-gen\UI\Authentication.feature.spec.js:64:7 › Authentication › TC02 Login-LockedOut - Locked-out user sees the lock-out error and cannot log in @ui @authentication @TC02 @P1 @security @core (1.5s)
+  ok  6 [chromium] › .features-gen\UI\Authentication.feature.spec.js:72:9 › Authentication › <id> Login-InvalidCredentials - Login is rejected for <case> › TC03 Login-InvalidCredentials - Login is rejected for wrong password @ui @authentication @TC03 @P1 @core (1.4s)
+  ok  8 [chromium] › .features-gen\UI\Authentication.feature.spec.js:88:9 › Authentication › <id> Login-RequiredFields - Required-field validation when <case> › TC04 Login-RequiredFields - Required-field validation when both fields empty @ui @authentication @TC04 @P2 @core (1.3s)
+  ok  7 [chromium] › .features-gen\UI\Cart.feature.spec.js:10:7 › Shopping cart › TC09 Cart-Badge - Badge tracks adding two products and removing one from the Products page @ui @cart @TC09 @smoke @P1 @core (2.1s)
+  ok  9 [chromium] › .features-gen\UI\Cart.feature.spec.js:32:7 › Shopping cart › TC11 Cart-Empty - A new session starts with an empty cart and Continue Shopping returns to Products @ui @cart @TC11 @P2 @core (2.0s)
+  ok 10 [chromium] › .features-gen\UI\Cart.feature.spec.js:20:7 › Shopping cart › TC10 Cart-Remove - Removing products on the Cart page updates contents and badge @ui @cart @TC10 @P1 @core (2.4s)
+  ok 11 [chromium] › .features-gen\UI\Checkout.feature.spec.js:10:7 › Checkout › TC12 Checkout-HappyPath - Completing checkout with two products charges item total plus tax and empties the cart @ui @checkout @TC12 @smoke @P1 @core (2.8s)
+  ok 12 [chromium] › .features-gen\UI\Checkout.feature.spec.js:176:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC13 Checkout-Validation - Checkout is blocked with the first name error when first name is missing @ui @checkout @TC13 @P1 @core (2.1s)
+  ok 13 [chromium] › .features-gen\UI\Checkout.feature.spec.js:34:7 › Checkout › TC16 Checkout-Cancel - Cancelling from the information step returns to the cart without placing an order @ui @checkout @TC16 @P2 @core (1.8s)
+  ok 14 [chromium] › .features-gen\UI\Checkout.feature.spec.js:186:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC14 Checkout-Validation - Checkout is blocked with the last name error when last name is missing @ui @checkout @TC14 @P1 @core (1.9s)
+  ok 15 [chromium] › .features-gen\UI\Checkout.feature.spec.js:45:7 › Checkout › TC17 Checkout-Cancel - Cancelling from the overview step leaves the order unplaced and the cart intact @ui @checkout @TC17 @P2 @core (2.4s)
+  ok 16 [chromium] › .features-gen\UI\Checkout.feature.spec.js:196:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC15 Checkout-Validation - Checkout is blocked with the postal code error when postal code is missing @ui @checkout @TC15 @P1 @core (2.2s)
+  ok 17 [chromium] › .features-gen\UI\Checkout.feature.spec.js:123:7 › Checkout › TC20 Checkout-KeepValues - Typed names stay in the form after a validation error @ui @checkout @TC20 @P3 @core (1.9s)
+  ok 18 [chromium] › .features-gen\UI\OrderCompletion.feature.spec.js:28:7 › Order completion › TC19 OrderComplete-DoubleClick - Double-clicking Finish shows a single confirmation @ui @order-completion @TC19 @P1 @core (2.1s)
+  ok 20 [chromium] › .features-gen\UI\ProductSorting.feature.spec.js:8:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC05 Sorting - "Name (A to Z)" orders the entire product list @ui @catalogue @TC05 @P2 @core (2.1s)
+  ok 19 [chromium] › .features-gen\UI\OrderTotals.feature.spec.js:48:9 › Order total calculation › <id> OrderTotal - Order total equals item total plus tax for <basket> › TC18 OrderTotal - Order total equals item total plus tax for all six products @ui @checkout @regression @TC18 @P1 @core (3.3s)
+  ok 21 [chromium] › .features-gen\UI\ProductSorting.feature.spec.js:18:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC07 Sorting - "Price (low to high)" orders the entire product list @ui @catalogue @TC07 @smoke @P1 @core (2.1s)
+  ok 22 [chromium] › .features-gen\UI\ProductSorting.feature.spec.js:38:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC06 Sorting - "Name (Z to A)" orders the entire product list @ui @catalogue @TC06 @P2 @core (2.1s)
+  ok 23 [chromium] › .features-gen\UI\ProductSorting.feature.spec.js:28:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC08 Sorting - "Price (high to low)" orders the entire product list @ui @catalogue @TC08 @P2 @core (2.0s)
+  x  24 [chromium] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core (1.9s)
+  ok 25 [chromium] › .features-gen\UI\SessionSecurity.feature.spec.js:15:7 › Session handling and protected pages › TC21 Session-Logout - After logout, direct navigation to /inventory.html does not show the Products page @ui @security @TC21 @smoke @P1 @core (2.7s)
+  ok 26 [chromium] › .features-gen\UI\SessionSecurity.feature.spec.js:27:9 › Session handling and protected pages › <id> Session-DeepLink - Unauthenticated deep link to <path> shows the login page › TC22 Session-DeepLink - Unauthenticated deep link to /cart.html shows the login page @ui @security @TC22 @P1 @core (1.3s)
+  ok 28 [firefox] › .features-gen\Accessibility\Accessibility.feature.spec.js:203:9 › Accessibility › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at <device> width › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at mobile width @accessibility @TC24 @AC14 @P3 @core (13.4s)
+  ok 27 [firefox] › .features-gen\Accessibility\Accessibility.feature.spec.js:83:7 › Accessibility › TC23 AC03 Keyboard-Login - A user can log in and add a product using only the keyboard @accessibility @TC23 @AC03 @P1 @core (15.1s)
+  ok 29 [firefox] › .features-gen\UI\Authentication.feature.spec.js:10:7 › Authentication › TC01 Login-HappyPath - Standard user logs in and reaches the Products page @ui @authentication @TC01 @smoke @P1 @core (3.5s)
+  ok 30 [firefox] › .features-gen\Accessibility\Accessibility.feature.spec.js:193:9 › Accessibility › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at <device> width › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at desktop width @accessibility @TC24 @AC14 @P3 @core (3.8s)
+  ok 31 [firefox] › .features-gen\UI\Authentication.feature.spec.js:64:7 › Authentication › TC02 Login-LockedOut - Locked-out user sees the lock-out error and cannot log in @ui @authentication @TC02 @P1 @security @core (3.1s)
+  ok 32 [firefox] › .features-gen\UI\Authentication.feature.spec.js:72:9 › Authentication › <id> Login-InvalidCredentials - Login is rejected for <case> › TC03 Login-InvalidCredentials - Login is rejected for wrong password @ui @authentication @TC03 @P1 @core (3.1s)
+  ok 34 [firefox] › .features-gen\UI\Authentication.feature.spec.js:88:9 › Authentication › <id> Login-RequiredFields - Required-field validation when <case> › TC04 Login-RequiredFields - Required-field validation when both fields empty @ui @authentication @TC04 @P2 @core (4.0s)
+  ok 33 [firefox] › .features-gen\UI\Cart.feature.spec.js:10:7 › Shopping cart › TC09 Cart-Badge - Badge tracks adding two products and removing one from the Products page @ui @cart @TC09 @smoke @P1 @core (5.7s)
+  ok 35 [firefox] › .features-gen\UI\Cart.feature.spec.js:32:7 › Shopping cart › TC11 Cart-Empty - A new session starts with an empty cart and Continue Shopping returns to Products @ui @cart @TC11 @P2 @core (4.6s)
+  ok 36 [firefox] › .features-gen\UI\Cart.feature.spec.js:20:7 › Shopping cart › TC10 Cart-Remove - Removing products on the Cart page updates contents and badge @ui @cart @TC10 @P1 @core (5.0s)
+  ok 38 [firefox] › .features-gen\UI\Checkout.feature.spec.js:176:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC13 Checkout-Validation - Checkout is blocked with the first name error when first name is missing @ui @checkout @TC13 @P1 @core (4.1s)
+  ok 37 [firefox] › .features-gen\UI\Checkout.feature.spec.js:10:7 › Checkout › TC12 Checkout-HappyPath - Completing checkout with two products charges item total plus tax and empties the cart @ui @checkout @TC12 @smoke @P1 @core (5.9s)
+  ok 40 [firefox] › .features-gen\UI\Checkout.feature.spec.js:34:7 › Checkout › TC16 Checkout-Cancel - Cancelling from the information step returns to the cart without placing an order @ui @checkout @TC16 @P2 @core (4.7s)
+  ok 39 [firefox] › .features-gen\UI\Checkout.feature.spec.js:186:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC14 Checkout-Validation - Checkout is blocked with the last name error when last name is missing @ui @checkout @TC14 @P1 @core (5.0s)
+  ok 42 [firefox] › .features-gen\UI\Checkout.feature.spec.js:196:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC15 Checkout-Validation - Checkout is blocked with the postal code error when postal code is missing @ui @checkout @TC15 @P1 @core (5.2s)
+  ok 41 [firefox] › .features-gen\UI\Checkout.feature.spec.js:45:7 › Checkout › TC17 Checkout-Cancel - Cancelling from the overview step leaves the order unplaced and the cart intact @ui @checkout @TC17 @P2 @core (5.7s)
+  ok 43 [firefox] › .features-gen\UI\OrderCompletion.feature.spec.js:28:7 › Order completion › TC19 OrderComplete-DoubleClick - Double-clicking Finish shows a single confirmation @ui @order-completion @TC19 @P1 @core (5.5s)
+  ok 44 [firefox] › .features-gen\UI\Checkout.feature.spec.js:123:7 › Checkout › TC20 Checkout-KeepValues - Typed names stay in the form after a validation error @ui @checkout @TC20 @P3 @core (5.3s)
+  ok 46 [firefox] › .features-gen\UI\ProductSorting.feature.spec.js:8:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC05 Sorting - "Name (A to Z)" orders the entire product list @ui @catalogue @TC05 @P2 @core (5.1s)
+  ok 45 [firefox] › .features-gen\UI\OrderTotals.feature.spec.js:48:9 › Order total calculation › <id> OrderTotal - Order total equals item total plus tax for <basket> › TC18 OrderTotal - Order total equals item total plus tax for all six products @ui @checkout @regression @TC18 @P1 @core (6.8s)
+  ok 48 [firefox] › .features-gen\UI\ProductSorting.feature.spec.js:38:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC06 Sorting - "Name (Z to A)" orders the entire product list @ui @catalogue @TC06 @P2 @core (2.8s)
+  ok 47 [firefox] › .features-gen\UI\ProductSorting.feature.spec.js:18:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC07 Sorting - "Price (low to high)" orders the entire product list @ui @catalogue @TC07 @smoke @P1 @core (4.7s)
+  ok 50 [firefox] › .features-gen\UI\ProductSorting.feature.spec.js:28:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC08 Sorting - "Price (high to low)" orders the entire product list @ui @catalogue @TC08 @P2 @core (3.3s)
+  x  49 [firefox] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core (4.5s)
+  ok 51 [firefox] › .features-gen\UI\SessionSecurity.feature.spec.js:15:7 › Session handling and protected pages › TC21 Session-Logout - After logout, direct navigation to /inventory.html does not show the Products page @ui @security @TC21 @smoke @P1 @core (4.1s)
+  ok 52 [firefox] › .features-gen\UI\SessionSecurity.feature.spec.js:27:9 › Session handling and protected pages › <id> Session-DeepLink - Unauthenticated deep link to <path> shows the login page › TC22 Session-DeepLink - Unauthenticated deep link to /cart.html shows the login page @ui @security @TC22 @P1 @core (6.2s)
+  ok 53 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:83:7 › Accessibility › TC23 AC03 Keyboard-Login - A user can log in and add a product using only the keyboard @accessibility @TC23 @AC03 @P1 @core (8.3s)
+  ok 54 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:203:9 › Accessibility › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at <device> width › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at mobile width @accessibility @TC24 @AC14 @P3 @core (2.6s)
+  ok 55 [webkit] › .features-gen\Accessibility\Accessibility.feature.spec.js:193:9 › Accessibility › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at <device> width › TC24 AC14 Responsive - Key controls are usable without horizontal scrolling at desktop width @accessibility @TC24 @AC14 @P3 @core (3.9s)
+  ok 56 [webkit] › .features-gen\UI\Authentication.feature.spec.js:10:7 › Authentication › TC01 Login-HappyPath - Standard user logs in and reaches the Products page @ui @authentication @TC01 @smoke @P1 @core (2.9s)
+  ok 57 [webkit] › .features-gen\UI\Authentication.feature.spec.js:72:9 › Authentication › <id> Login-InvalidCredentials - Login is rejected for <case> › TC03 Login-InvalidCredentials - Login is rejected for wrong password @ui @authentication @TC03 @P1 @core (2.4s)
+  ok 58 [webkit] › .features-gen\UI\Authentication.feature.spec.js:64:7 › Authentication › TC02 Login-LockedOut - Locked-out user sees the lock-out error and cannot log in @ui @authentication @TC02 @P1 @security @core (2.3s)
+  ok 59 [webkit] › .features-gen\UI\Authentication.feature.spec.js:88:9 › Authentication › <id> Login-RequiredFields - Required-field validation when <case> › TC04 Login-RequiredFields - Required-field validation when both fields empty @ui @authentication @TC04 @P2 @core (2.3s)
+  ok 61 [webkit] › .features-gen\UI\Cart.feature.spec.js:32:7 › Shopping cart › TC11 Cart-Empty - A new session starts with an empty cart and Continue Shopping returns to Products @ui @cart @TC11 @P2 @core (3.6s)
+  ok 60 [webkit] › .features-gen\UI\Cart.feature.spec.js:10:7 › Shopping cart › TC09 Cart-Badge - Badge tracks adding two products and removing one from the Products page @ui @cart @TC09 @smoke @P1 @core (4.1s)
+  ok 63 [webkit] › .features-gen\UI\Cart.feature.spec.js:20:7 › Shopping cart › TC10 Cart-Remove - Removing products on the Cart page updates contents and badge @ui @cart @TC10 @P1 @core (4.3s)
+  ok 62 [webkit] › .features-gen\UI\Checkout.feature.spec.js:10:7 › Checkout › TC12 Checkout-HappyPath - Completing checkout with two products charges item total plus tax and empties the cart @ui @checkout @TC12 @smoke @P1 @core (6.8s)
+  ok 64 [webkit] › .features-gen\UI\Checkout.feature.spec.js:176:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC13 Checkout-Validation - Checkout is blocked with the first name error when first name is missing @ui @checkout @TC13 @P1 @core (4.4s)
+  ok 65 [webkit] › .features-gen\UI\Checkout.feature.spec.js:34:7 › Checkout › TC16 Checkout-Cancel - Cancelling from the information step returns to the cart without placing an order @ui @checkout @TC16 @P2 @core (4.0s)
+  ok 66 [webkit] › .features-gen\UI\Checkout.feature.spec.js:186:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC14 Checkout-Validation - Checkout is blocked with the last name error when last name is missing @ui @checkout @TC14 @P1 @core (4.7s)
+  ok 67 [webkit] › .features-gen\UI\Checkout.feature.spec.js:45:7 › Checkout › TC17 Checkout-Cancel - Cancelling from the overview step leaves the order unplaced and the cart intact @ui @checkout @TC17 @P2 @core (6.1s)
+  ok 68 [webkit] › .features-gen\UI\Checkout.feature.spec.js:196:9 › Checkout › <id> Checkout-Validation - Checkout is blocked with the <field> error when <field> is missing › TC15 Checkout-Validation - Checkout is blocked with the postal code error when postal code is missing @ui @checkout @TC15 @P1 @core (4.7s)
+  ok 69 [webkit] › .features-gen\UI\Checkout.feature.spec.js:123:7 › Checkout › TC20 Checkout-KeepValues - Typed names stay in the form after a validation error @ui @checkout @TC20 @P3 @core (4.2s)
+  ok 70 [webkit] › .features-gen\UI\OrderCompletion.feature.spec.js:28:7 › Order completion › TC19 OrderComplete-DoubleClick - Double-clicking Finish shows a single confirmation @ui @order-completion @TC19 @P1 @core (5.0s)
+  ok 72 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:8:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC05 Sorting - "Name (A to Z)" orders the entire product list @ui @catalogue @TC05 @P2 @core (3.5s)
+  ok 71 [webkit] › .features-gen\UI\OrderTotals.feature.spec.js:48:9 › Order total calculation › <id> OrderTotal - Order total equals item total plus tax for <basket> › TC18 OrderTotal - Order total equals item total plus tax for all six products @ui @checkout @regression @TC18 @P1 @core (7.5s)
+  ok 73 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:18:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC07 Sorting - "Price (low to high)" orders the entire product list @ui @catalogue @TC07 @smoke @P1 @core (3.6s)
+  ok 74 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:38:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC06 Sorting - "Name (Z to A)" orders the entire product list @ui @catalogue @TC06 @P2 @core (4.0s)
+  ok 75 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:28:9 › Product catalogue sorting › <id> Sorting - "<sort>" orders the entire product list › TC08 Sorting - "Price (high to low)" orders the entire product list @ui @catalogue @TC08 @P2 @core (4.1s)
+  x  76 [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core (3.2s)
+  ok 77 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:15:7 › Session handling and protected pages › TC21 Session-Logout - After logout, direct navigation to /inventory.html does not show the Products page @ui @security @TC21 @smoke @P1 @core (4.5s)
+  ok 78 [webkit] › .features-gen\UI\SessionSecurity.feature.spec.js:27:9 › Session handling and protected pages › <id> Session-DeepLink - Unauthenticated deep link to <path> shows the login page › TC22 Session-DeepLink - Unauthenticated deep link to /cart.html shows the login page @ui @security @TC22 @P1 @core (1.7s)
+
+
+  1) [chromium] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core › Then the product prices should be in ascending order 
+
+    Error: Product prices should be ascending. Full list: [29.99, 9.99, 15.99, 49.99, 7.99, 15.99]
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "position 1 \"29.99\" before 2 \"9.99\"",
+    +   "position 4 \"49.99\" before 5 \"7.99\"",
+    + ]
+
+       at ..\src\test\support\assertions.ts:46
+
+      44 |     outOfOrder,
+      45 |     `${label} should be ${direction}. Full list: [${values.map(String).join(', ')}]`,
+    > 46 |   ).toEqual([]);
+         |     ^
+      47 | }
+      48 |
+      49 | const lineKey = (item: LineItem): string => `${item.name}|${item.priceCents}`;
+        at expectSorted (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\support\assertions.ts:46:5)
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\catalogue.steps.ts:46:19)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\ProductSorting.feature.spec.js:53:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [firefox] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core › Then the product prices should be in ascending order 
+
+    Error: Product prices should be ascending. Full list: [29.99, 9.99, 15.99, 49.99, 7.99, 15.99]
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "position 1 \"29.99\" before 2 \"9.99\"",
+    +   "position 4 \"49.99\" before 5 \"7.99\"",
+    + ]
+
+       at ..\src\test\support\assertions.ts:46
+
+      44 |     outOfOrder,
+      45 |     `${label} should be ${direction}. Full list: [${values.map(String).join(', ')}]`,
+    > 46 |   ).toEqual([]);
+         |     ^
+      47 | }
+      48 |
+      49 | const lineKey = (item: LineItem): string => `${item.name}|${item.priceCents}`;
+        at expectSorted (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\support\assertions.ts:46:5)
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\catalogue.steps.ts:46:19)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\ProductSorting.feature.spec.js:53:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-firefox\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-firefox\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-firefox\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core › Then the product prices should be in ascending order 
+
+    Error: Product prices should be ascending. Full list: [29.99, 9.99, 15.99, 49.99, 7.99, 15.99]
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 4
+
+    - Array []
+    + Array [
+    +   "position 1 \"29.99\" before 2 \"9.99\"",
+    +   "position 4 \"49.99\" before 5 \"7.99\"",
+    + ]
+
+       at ..\src\test\support\assertions.ts:46
+
+      44 |     outOfOrder,
+      45 |     `${label} should be ${direction}. Full list: [${values.map(String).join(', ')}]`,
+    > 46 |   ).toEqual([]);
+         |     ^
+      47 | }
+      48 |
+      49 | const lineKey = (item: LineItem): string => `${item.name}|${item.priceCents}`;
+        at expectSorted (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\support\assertions.ts:46:5)
+        at Object.<anonymous> (C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\src\test\steps\domains\catalogue.steps.ts:46:19)
+        at C:\Users\kanch\Assesment Playwright\harvee-qa-assessment\.features-gen\UI\ProductSorting.feature.spec.js:53:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\UI-ProductSorting.feature--e0ecb-oduct-list-for-problem-user-webkit\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core 
+    [firefox] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core 
+    [webkit] › .features-gen\UI\ProductSorting.feature.spec.js:50:7 › Product catalogue sorting › TC25 Sorting-ProblemUser - "Price (low to high)" orders the entire product list for problem_user @ui @catalogue @TC25 @P1 @regression @known-defect @BUG-01 @core 
+  75 passed (2.9m)

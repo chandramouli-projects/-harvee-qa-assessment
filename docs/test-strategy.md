@@ -1,26 +1,38 @@
-# Test Strategy — Sauce Demo (Harvee Technologies assessment)
+# Test Strategy — Sauce Demo "Shop and check out"
 
 ## Scope
 
-Functional, accessibility, responsive, cross-browser and safe session checks of https://www.saucedemo.com, using the public demo users only. Out of scope: load, stress and penetration testing, API discovery, and any other system.
+Login, product sorting, cart, checkout, order completion and logged-out access on https://www.saucedemo.com, using only the published demo users. Also: cross-browser (Chrome, Firefox, Safari/WebKit), screen size, accessibility (WCAG 2.2 A/AA) and passive security checks.
+Out of scope: load and stress testing, active security testing (scanning, fuzzing, brute force), API discovery, and any other system.
+
+## Suites
+
+| Suite | IDs | What it covers |
+|-------|-----|----------------|
+| **Core (A1)** | TC01–TC25 | The 25 cases that cover every business rule in the brief. 23 are in `src/test/features/UI/`; TC23 and TC24 are in the accessibility suite, named `TC23 AC03 …` and `TC24 AC14 …`. |
+| **Extended functional** | TC26–TC98 | Extra input variations, product page, cart state, order integrity, navigation, session timeout and the other demo users. |
+| **Accessibility** | AC01–AC15 | axe-core WCAG 2.2 A/AA scans, keyboard-only use, focus, names, alt text, page titles, reflow. |
+| **Security (passive)** | SC01–SC14 | HTTPS, response headers, cookie flags, hand-made cookies, user enumeration, credentials in URL/storage, script input. |
+
+The manual test cases (`manual_test_cases/SauceDemo_Functional_Test_Cases.xlsx`) are the source: every functional scenario has the same ID and title as its Excel row, so manual and automated results can be compared one to one.
 
 ## Layers
 
-| Layer | What belongs here | Status in this assessment |
-|-------|-------------------|---------------------------|
-| UI automation (Playwright + BDD via playwright-bdd) | Critical journeys, written as Gherkin scenarios tagged with their manual IDs: login and its errors, full-list sorting, cart badge and contents, checkout validation, totals and completion, cancellation, session protection, keyboard operability, axe scan, viewport checks. | Implemented, executed on Chromium, Firefox and WebKit. |
-| API / unit | Price, tax and total calculation; sort comparators (including ties); field validation; authorisation of every protected endpoint; order idempotency. | **Not performed.** No source or API contract was supplied, so no endpoints were invented. Recommended for a client-owned system. |
-| Manual / exploratory | `problem_user` charter, visual and responsive review on real devices, screen-reader usability, duplicate submission and order integrity, usability. | Designed (ANSWERS.md A1, EX-01). |
+| Layer | What belongs here | Status |
+|-------|-------------------|--------|
+| UI automation | The core journeys and the extended, accessibility and security checks above, in three browsers. | Implemented and executed. |
+| API / unit (client-owned system) | Total and tax calculation, sort logic, field validation, server-side login and session checks, one order per checkout. | Not possible here: no source or API contract was supplied, so no endpoints were invented. Recommended for a client system. |
+| Manual / exploratory | `problem_user` charter, screen-reader use (NVDA/VoiceOver), real phones, browser zoom, the PDF order content, visual review. | Designed (ANSWERS.md A1.3); to be run before sign-off. |
 
 ## Strategy summary (under 150 words)
 
-The UI layer keeps a thin, stable set of critical journeys. These run across three engines and assert business outcomes: whole-list ordering, subtotal + tax = total to the cent, an empty cart after an order, and blocked access after logout. Calculation rules, validation, comparators and authorisation belong in fast API and unit tests in the client's own codebase. They are not covered here because Sauce Demo exposes no supported API or source. Manual effort goes to exploratory charters, real-device and visual checks, screen-reader usability, and order-integrity scenarios that need backend visibility. **Largest remaining risk:** order integrity. The UI cannot confirm what the backend recorded or charged, whether a double submission creates duplicate orders, or whether protected endpoints enforce authorisation server-side.
+See ANSWERS.md, section A1.4. In short: the 25 core journeys run at the UI layer in three browsers; calculations, validation, sorting and server-side access rules belong at the API/unit layer if the client has one; exploratory, screen-reader, real-device and visual checks stay manual. **Biggest remaining risk:** login and the cart are enforced only in the browser (a hand-made login cookie opens the shop; one user's cart is shown to the next user), and the UI cannot prove what the server allows.
 
 ## Entry and exit criteria
 
 - **Entry:** site reachable; `config/.env.demo` configured; `npm run check` passes.
-- **Exit:** every P1 case executed; all unexpected failures investigated and classified as product defect, test defect or environment; known defects tracked with evidence; no unexplained flaky tests.
+- **Exit:** every P1 case executed in all three browsers; every failure investigated and classified as a product bug, a test problem or an environment problem; every remaining failure linked to a bug ID with evidence; no unexplained flaky tests.
 
 ## Reliability rules
 
-No fixed sleeps (enforced by ESLint). Each scenario gets a fresh browser context and its own login. Retries default to 0 so first-run failures stay visible. Any intermittent failure is reproduced with `--repeat-each` before it is classified.
+No fixed sleeps (enforced by ESLint). Each scenario starts in a fresh browser context and logs in itself. Retries are 0, so first-run failures stay visible. Any intermittent failure is reproduced with `--repeat-each` before it is classified. The public practice site is not load-tested: repeat runs are kept to what is needed to diagnose a failure.

@@ -118,6 +118,8 @@ export const testConfig = Object.freeze({
     lockedOut: readRequired('LOCKED_OUT_USER'),
     problem: readRequired('PROBLEM_USER'),
     performanceGlitch: readRequired('PERFORMANCE_GLITCH_USER'),
+    error: readRequired('ERROR_USER'),
+    visual: readRequired('VISUAL_USER'),
   }),
   password: readRequired('PASSWORD'),
 

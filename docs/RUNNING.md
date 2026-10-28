@@ -32,7 +32,7 @@ Every test script runs `bddgen` first, so the generated tests in `.features-gen/
 Gherkin tags are Playwright tags, so `--grep` works on them:
 
 ```bash
-npx bddgen && npx playwright test --grep @TC15                  # one manual case
+npx bddgen && npx playwright test --grep @TC12                  # one manual case
 npx bddgen && npx playwright test --grep "@checkout"            # one area
 npx bddgen && npx playwright test --grep @P1 --grep-invert @known-defect
 npx cross-env BROWSER=all WORKERS=2 npm test                    # as executed for the evidence
@@ -40,7 +40,8 @@ npx cross-env BROWSER=all WORKERS=2 npm test                    # as executed fo
 
 | Tag | Meaning |
 |-----|---------|
-| `@TC01` … `@TC25` | Manual case ID (see `traceability-matrix.md`) |
+| `@TC01` … `@TC98` | Manual case ID from the Excel (see `traceability-matrix.md`) |
+| `@core` / `@extended` | Core suite (A1, TC01–TC25) / extended functional suite (TC26–TC98). TC23 and TC24 are tagged `@core` in the accessibility feature, so `npm run test:core` runs all 25 core cases |
 | `@P1` / `@P2` / `@P3` | Priority from the manual suite |
 | `@smoke` | Short critical-path set for every change |
 | `@regression`, `@security` | Regression baskets; session / access checks |
@@ -53,7 +54,7 @@ npx cross-env BROWSER=all WORKERS=2 npm test                    # as executed fo
 |----------|-------------------|---------|
 | `ENV` | `demo` | Selects `config/.env.<ENV>` (registry: `config/environments.ts`). Set in the shell, not in the file. |
 | `BASE_URL` | `https://www.saucedemo.com` | Application URL (required, validated) |
-| `STANDARD_USER`, `LOCKED_OUT_USER`, `PROBLEM_USER`, `PERFORMANCE_GLITCH_USER`, `PASSWORD` | public demo values | Required. A missing value stops the run with an error that names the variable but never prints its value |
+| `STANDARD_USER`, `LOCKED_OUT_USER`, `PROBLEM_USER`, `PERFORMANCE_GLITCH_USER`, `ERROR_USER`, `VISUAL_USER`, `PASSWORD` | public demo values | Required. A missing value stops the run with an error that names the variable but never prints its value |
 | `BROWSER` | `chromium` | `chromium`, `firefox`, `webkit`, a comma-separated list, or `all` |
 | `HEADLESS` | `true` | `true`/`false` |
 | `SLOWMO` | `0` | Slow-motion delay in ms for watching a headed run |
@@ -77,4 +78,16 @@ Variables already set in the shell or CI take precedence over the file.
 | View a trace | `npx playwright show-trace test-results/<dir>/trace.zip` |
 | Step / scenario log | `logs/test-execution.log` |
 
-Screenshots, video and trace are kept **only on failure**. Expected-failure scenarios also keep them, so DEF-01 and DEF-02 have evidence.
+Screenshots, video and trace are kept **only on failure**. Bug scenarios fail, so they keep them too and every known defect has evidence.
+
+Accessibility suite only (strict WCAG 2.2 A/AA, axe JSON attached per screen):
+
+```bash
+npx bddgen && npx cross-env BROWSER=all WORKERS=2 playwright test --grep @accessibility
+```
+
+Security suite only (passive checks; `@security` alone would also pick up the functional session scenarios TC21, TC22 and TC88–TC94):
+
+```bash
+npx bddgen && npx cross-env BROWSER=all WORKERS=2 playwright test --grep "@SC[0-9]"
+```

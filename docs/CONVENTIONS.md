@@ -4,13 +4,19 @@
 
 ## Feature files
 
-- One file per functional area in `src/test/features/UI/`, starting with the banner comment (feature number, manual case IDs, rules that apply).
-- Feature-level tags: `@ui` plus the area (`@authentication`, `@catalogue`, `@cart`, `@checkout`, `@security`, `@accessibility`).
-- Scenario-level tags: the manual case ID (`@TC15`), the priority (`@P1`–`@P3`) and, where relevant, `@smoke`, `@regression`, `@security`.
-- Scenario names: `<ID> <Area>-<Case> - <what is proven>`, e.g. `TC15 Checkout-HappyPath - …`.
-- Use `Scenario Outline` + `Examples` for data-driven cases. When rows map to different manual IDs, split them into tagged `Examples` blocks (see `ProductSorting.feature`).
-- Write **business data** in the feature (product names, expected messages, invalid inputs) so a reviewer reads it next to the scenario. Never write credentials: refer to users by role (`"standard"`, `"locked out"`, `"problem"`, `"performance glitch"`) or use `${VARIABLE}` placeholders resolved from config.
-- **Known defects** keep the full assertion and are tagged `@known-defect @DEF-xx @fail`. `@fail` makes the result an expected failure; if the defect is fixed, Playwright reports an unexpected pass and the tag must be removed. Never weaken or delete the assertion.
+- **The manual test case Excel is the source:** `manual_test_cases/SauceDemo_Functional_Test_Cases.xlsx`. Every functional test case (core TC01–TC25 except TC23/TC24, extended TC26–TC98) has a scenario, and every functional scenario belongs to one Excel test case.
+- One file per functional area in `src/test/features/UI/`, starting with the banner comment: feature number, a **"TEST CASES COVERED" list with each Excel ID and title**, and the rules that apply.
+- Feature-level tags: `@ui` plus the area (`@authentication`, `@products`, `@catalogue`, `@product-detail`, `@cart`, `@checkout`, `@order-completion`, `@navigation`, `@security`, `@personas`, `@accessibility`).
+- Scenario-level tags: the Excel test case ID (`@TC12`, exactly one per scenario), the suite (`@core` or `@extended`), the priority (`@P1`–`@P3`) and, where relevant, `@smoke`, `@regression`, `@security`.
+- Scenario names: `<Excel ID> <Area>-<Case> - <what is proven>`, e.g. `TC12 Checkout-HappyPath - …`.
+- Use `Scenario Outline` + `Examples` for data-driven cases. When rows map to different Excel IDs, split them into tagged `Examples` blocks (see `ProductSorting.feature`). Rows of one Excel case (e.g. TC53 names) share its tag.
+- Accessibility checks are not in the Excel. They live in `src/test/features/Accessibility/Accessibility.feature` with `ACxx` IDs (`@AC01`…), so they never clash with `TCxx`. The standard is WCAG 2.0/2.1/2.2 A and AA; an axe scan fails on any WCAG violation, while axe "incomplete" and best-practice results are attached for manual review. Screens used by the checks are opened with `Given the "<screen>" screen is open`.
+- Security checks are not in the Excel either. They live in `src/test/features/Security/Security.feature` with `SCxx` IDs. They must stay **passive**: read headers, redirects, cookies and browser storage, or do things that affect only the test's own browser. Never add attack traffic, active scanning, fuzzing or brute force against the public site.
+- Write **business data** in the feature (product names, expected messages, invalid inputs) so a reviewer reads it next to the scenario. Never write credentials: refer to users by role (`"standard"`, `"locked out"`, `"problem"`, `"performance glitch"`, `"error"`, `"visual"`) or use `${VARIABLE}` placeholders resolved from config.
+- **Bugs:** a scenario that finds a bug keeps the full assertion, is tagged `@known-defect @BUG-xx` (the ID in the Excel "Bugs" tab) and **fails in the report** while the bug exists; a comment above it says what was seen. Never weaken or delete the assertion. When the bug is fixed the scenario passes again.
+- Where the Excel marks an ASSUMPTION (no business rule given), the scenario has a `# ASSUMPTION:` comment.
+- Accessibility and security bugs follow the same rule with `@known-defect @AC-BUG-xx` / `@SC-BUG-xx` (listed in the feature banner and in `known-limitations.md`). The former DEF-02 is now AC-BUG-01.
+- A check that cannot work in one browser for a browser reason (not a site bug) is skipped at runtime with the reason, e.g. `Given keyboard focus can move to links in this browser` skips WebKit.
 
 ## Step definitions
 
@@ -45,4 +51,4 @@
 | Change a coding rule or tag convention | this file |
 | Add a step | `STEP_REFERENCE.md` |
 | Add/change npm scripts or env vars | `RUNNING.md` |
-| Add/change a scenario or its manual ID | `traceability-matrix.md` and the README mapping |
+| Add/change a scenario or its manual ID | the Excel test case, the feature banner list, `traceability-matrix.md` and the README mapping |
