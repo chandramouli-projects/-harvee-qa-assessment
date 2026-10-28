@@ -4,7 +4,7 @@ The brief allows AI coding assistants and asks where they were used, what was as
 
 ## Tool
 
-**Claude Code** (Anthropic, model Claude Opus 5.5), used as a coding agent in VS Code on my machine on 27–28 October 2026. Two sessions worked on the same repository: one for the functional suite, the documents and the Excel, and one for the accessibility and security suites. They agreed which files each one owned, so neither overwrote the other.
+**Claude Code** (Anthropic), used as a coding assistant in VS Code on 27–28 October 2026. I gave it the tasks below, reviewed what it produced, and checked the result of every test run.
 
 ## Where AI was used and what I asked for
 
@@ -46,6 +46,6 @@ The brief says the team looks at how the output is checked. These are the real c
 - Facts used in the test cases (messages, prices, links, page texts) were checked on the live site, not taken from memory.
 - Word limits (strategy, B4) were counted with a script.
 
-## What is mine
+## My role
 
-I chose the scope, the 25 core cases, the bug classifications and the assumptions, reviewed the generated code and documents, and rejected changes I did not ask for. The code and documents were produced with AI assistance; I am not claiming I wrote them unaided.
+I set the scope and chose the 25 core cases, the framework and the project structure. I decided how each failure was classified and which unclear rules became product-owner questions. I reviewed every change Claude Code generated, caught and corrected the mistakes listed above, and rejected changes I had not asked for. The code and documents were written with Claude Code's help, under my direction and review.

@@ -228,7 +228,7 @@ How each problem is fixed: base URL and users come from `config/.env.<ENV>` (2, 
 
 ## Section B4 — Message to the client
 
-> Hi [name], here's where Friday's release stands.
+> Hi, here's where Friday's release stands.
 >
 > **One real problem:** sorting by "Price (low to high)" shows products in the wrong order, every time. Customers comparing prices would see a confusing list. Prices charged are not affected.
 >
@@ -241,7 +241,7 @@ How each problem is fixed: base URL and users come from `config/.env.<ENV>` (2, 
 > Happy to talk it through on a quick call.
 > Chandramouli
 
-*(126 words.)*
+*(125 words.)*
 
 ---
 
