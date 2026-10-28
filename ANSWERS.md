@@ -61,7 +61,7 @@ These are the 25 core cases from the Excel sheet **Core Test Cases (A1)**, where
 
 **Coverage of the brief:** positive, negative and boundary (TC04, TC18); usability (TC20); browser and screen size (TC24, and every case runs in three browsers); accessibility (TC23); security (TC21, TC22). Every business rule in the brief has at least one P1 case.
 
-**Executed result (manual, 27–28 Oct 2026, Chrome, Firefox and Safari engines):** 24 passed, 1 failed (TC25 → BUG-01).
+**Executed result (27–28 Oct 2026, Chrome, Firefox and WebKit; actual results recorded in the Excel):** 24 passed, 1 failed (TC25 → BUG-01).
 
 ### A1.3 Exploratory charter — EX-01 (15 minutes, `problem_user`)
 
@@ -260,13 +260,13 @@ How each problem is fixed: base URL and users come from `config/.env.<ENV>` (2, 
 
 ### C2 — A recent production issue
 
-> I don't have a recent production incident that I can share in detail, so I'll answer from my experience of testing this application end to end, manually and with automation.
+> I don't have a recent production incident that I can share in detail. The most serious issue I found recently was in this assessment, so I'll walk through it as I would for a live system.
 
 | Point | My answer |
 |-------|-----------|
-| **What happened and how I found it** | No production issue came up. While running the core journeys by hand and in three browsers, I also noted how easy each journey felt for a shopper. Two journeys stood out: the **cart journey is smooth**, and the **menu journey is harder than it needs to be**. |
-| **What works well: adding to the cart** | One click on "Add to cart". The button changes to "Remove" straight away, the cart number updates, and the cart shows the same price as the Products page. Checkout is three short steps with clear error messages. A first-time user can buy without help. |
-| **Why the menu feels harder (the "root cause")** | Everything outside shopping is hidden behind the ☰ icon, even on a wide desktop screen: All Items, Dynamic Catalog, About, Logout and Reset App State. Logging out takes two clicks and is not visible until the menu is opened. "Reset App State" and "Dynamic Catalog" are technical names that a shopper would not understand, and "Reset App State" sits right next to Logout. "About" takes the user out of the shop to the Sauce Labs website without saying so. |
-| **Explaining it to the client** | In plain words: "Shopping and checkout are smooth. The menu is the one place customers may struggle: Logout and the other options are hidden behind an icon, and some options have technical names. It won't stop anyone from buying, but a small design change would make it clearer." I would share it as a usability observation with screenshots, not as a defect, and let the product owner decide. |
-| **Suggestions to make it better** | Show Logout (or an account area) in the header on desktop. Rename "Reset App State" to something clear such as "Clear cart", or remove it from the customer menu. Mark "About" as an external link. Keep the menu tests (open, close, every item works, keyboard use) in the regression suite so a redesign doesn't break it. |
-| **Looking back** | Functional tests tell me whether a journey works, not whether it is easy. Next time I would add a short usability check early: watch two or three people do the main journeys and note where they hesitate. |
+| **What happened and how I found it** | The brief's rules said nothing about who owns a cart, so I asked myself: *what happens when a different person logs in on the same browser?* I wrote a test for it (TC60): log in as `standard_user`, add two products, log out, log in as `problem_user`. The second user saw the cart number **2** and the first user's two products in their cart. It happened every time, in Chrome, Firefox and Safari (WebKit). |
+| **Impact** | On a real shop this is a privacy and money problem. On a shared computer (family, office, internet café) the next customer sees what the previous one picked, and could even buy it. |
+| **Root cause** | I checked how the site keeps the login and the cart. The cart is stored in the browser, not on the user's account, so logging out does not clear it. Login is also checked only in the browser: in a separate test (SC08) I set the login cookie by hand to a valid username, and the shop opened **without a password**. Both point to the same cause: the server does not check who the user is. |
+| **Explaining it to the client** | I would tell the product owner the same day, in plain words: "If two people use the same computer, the second person can see the first person's cart. Also, someone who knows a username can get in without the password. Nobody is being charged wrongly, but customer data is exposed." I'd attach the steps, screenshots and the failing tests, mark it High, and suggest a fix: keep the cart and the session on the server, and clear the cart on logout. |
+| **Stopping it happening again** | Both checks are automated tests that **fail while the problem exists** and will pass once it is fixed, so nobody can forget it. I added them to the regression suite, and I added "whose data is this?" questions (Q8) to my test design so cart, session and account data are always checked between users. |
+| **Looking back** | I found this only because I went beyond the written rules. Next time I would ask the product owner about user data and sessions on day one, and run a short security review of login and cart early, instead of treating them as extras. |

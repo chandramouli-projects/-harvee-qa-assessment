@@ -136,7 +136,7 @@ Extra work, kept separate so the required parts above are easy to review.
 | Accessibility | AC01–AC15 | 32 | axe-core WCAG 2.2 A/AA scans of 11 screens, keyboard-only use, visible focus, accessible names, error announcements, alt text, page titles, 320 px reflow |
 | Security (passive only) | SC01–SC14 | 19 | HTTPS, security headers, cookie flags, hand-made cookies, user enumeration, credentials in URL or storage, script input. No attack traffic. |
 
-The extended cases are in the Excel sheet *Extended Test Cases* (73 cases, all run manually as well).
+The extended cases are in the Excel sheet *Extended Test Cases* (73 cases, each with its recorded result).
 
 ### Whole-suite results (final run, retries 0)
 
