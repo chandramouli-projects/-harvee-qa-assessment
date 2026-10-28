@@ -175,6 +175,62 @@ export function expectTotalsConsistent(items: readonly LineItem[], totals: Order
 }
 ```
 
+**The same rewrite as a plain Playwright test** (no Gherkin), using the same page objects and checks. It is in [`examples/b1-plain-playwright/cart-total.spec.ts`](examples/b1-plain-playwright/cart-total.spec.ts) and passes in Chromium, Firefox and WebKit (`npm run test:b1-plain`):
+
+```ts
+import { test, expect } from '@playwright/test';
+import { testConfig } from '../../config/testConfig';
+import {
+  LoginPage,
+  ProductsPage,
+  CartPage,
+  CheckoutPage,
+  MenuComponent,
+} from '../../src/test/pages';
+import { CUSTOMER } from '../../src/test/data/test-data';
+import { expectSameLineItems, expectTotalsConsistent } from '../../src/test/support/assertions';
+
+const BASKETS = [
+  { id: 'TC75', basket: 'one product', products: ['Sauce Labs Onesie'] },
+  {
+    id: 'TC76',
+    basket: 'two products',
+    products: ['Sauce Labs Backpack', 'Sauce Labs Bike Light'],
+  },
+];
+
+for (const { id, basket, products } of BASKETS) {
+  test(`${id} order total equals item total plus tax for ${basket}`, async ({ page }) => {
+    const login = new LoginPage(page);
+    const shop = new ProductsPage(page);
+    const header = new MenuComponent(page);
+    const cart = new CartPage(page);
+    const checkout = new CheckoutPage(page);
+
+    await login.goto();
+    await login.login(testConfig.users.standard, testConfig.password);
+    await shop.expectLoaded();
+
+    const selected = await shop.addProductsToCart(products); // name + price at the moment of adding
+    await header.expectCartCount(products.length);
+
+    await header.openCart();
+    expectSameLineItems(await cart.getLineItems(), selected, 'cart contents');
+    await cart.checkout();
+    await checkout.submitInformation(CUSTOMER);
+
+    expectSameLineItems(await checkout.getOverviewItems(), selected, 'overview items');
+    expectTotalsConsistent(selected, await checkout.getTotals()); // item total = sum; total = item total + tax
+
+    await checkout.finish();
+    await checkout.expectConfirmation('Thank you for your order!');
+    await checkout.backHome();
+    await header.expectCartCount(0);
+    expect(page.url()).toContain('/inventory.html');
+  });
+}
+```
+
 How each problem is fixed: base URL and users come from `config/.env.<ENV>` (2, 3); all selectors live in `LoginPage`, `ProductsPage`, `CartPage`, `CheckoutPage` (4); login, cart, overview and confirmation pages are each asserted (5, 8, 10); products are picked by **exact name** inside their own card (6); only auto-waiting assertions, and ESLint fails the build on `waitForTimeout` (7, 11); customer data comes from `src/test/data` (9); the totals are read as cents and checked against the prices recorded when each product was added, the tax is read from the page and not assumed (12, 13); three basket sizes, Finish, and an empty cart at the end (14); the name starts with the manual ID (1).
 
 ---

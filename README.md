@@ -39,6 +39,7 @@ The base URL, the demo users and the password are read from `config/.env.demo` (
 | Everything (core + extended + accessibility + security) | `npm test` (Chromium) · `npx cross-env BROWSER=all WORKERS=2 npm test` (three browsers) |
 | One browser | `npm run test:chromium` / `test:firefox` / `test:webkit` |
 | Watch it run / debug | `npm run test:headed` / `test:debug` / `test:ui` |
+| B1 rewrite as a plain Playwright test (no Gherkin), three browsers | `npm run test:b1-plain` |
 | Static checks (TypeScript, ESLint, Prettier) | `npm run check` |
 
 Every script first runs `bddgen`, which turns the `.feature` files into Playwright tests.
@@ -178,6 +179,7 @@ src/test/steps/         shared/ and one step file per area
 src/test/pages/         page objects and components/MenuComponent
 src/test/support/       money (whole cents), business-rule assertions, users, axe helpers
 manual_test_cases/      Excel: Summary, Core Test Cases (A1), Extended Test Cases, Bugs
+examples/               B1 rewrite as a plain Playwright test, with its own small config
 evidence/               logs of the runs quoted in this README
 .github/workflows/      CI: Playwright on pushes to main and on pull requests
 playwright.config.ts    browsers, workers, reporters, screenshots and traces on failure
