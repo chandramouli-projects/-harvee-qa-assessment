@@ -50,5 +50,6 @@
 | Add/remove a top-level folder or framework component | `ARCHITECTURE.md` |
 | Change a coding rule or tag convention | this file |
 | Add a step | `STEP_REFERENCE.md` |
-| Add/change npm scripts or env vars | `RUNNING.md` |
+| Add/change npm scripts | `COMMANDS.md` |
+| Add/change env vars or tags | `RUNNING.md` |
 | Add/change a scenario or its manual ID | the Excel test case, the feature banner list, `traceability-matrix.md` and the README mapping |

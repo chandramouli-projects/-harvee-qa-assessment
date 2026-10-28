@@ -12,6 +12,7 @@ Playwright + TypeScript test suite with scenarios written in Gherkin ([playwrigh
 | **A2** automation suite | this repository · [setup](#setup) · [run](#running-the-tests) · [manual → automated mapping](#manual-case--automated-test-mapping) · [200 tests](#growing-the-suite-to-200-tests) |
 | **B1–B4** | [ANSWERS.md › B1](ANSWERS.md#section-b1--review-of-the-ai-generated-cart-total-test) … [B4](ANSWERS.md#section-b4--message-to-the-client) |
 | **C** notes for the live discussion | [ANSWERS.md › C](ANSWERS.md#section-c--notes-for-the-live-discussion) |
+| **Every run command, explained** (headless, headed, one browser, one test…) | [COMMANDS.md](COMMANDS.md) |
 | AI usage | [AI_USAGE.md](AI_USAGE.md) |
 | Work beyond the brief (extra cases, accessibility, security) | [Beyond the brief](#beyond-the-brief) |
 | Everything above in one Word document (the uploaded submission) | [submission/Chandramouli_Kancharla_QA_Automation_Assessment.docx](submission/Chandramouli_Kancharla_QA_Automation_Assessment.docx) |
@@ -42,7 +43,7 @@ The base URL, the demo users and the password are read from `config/.env.demo` (
 | B1 rewrite as a plain Playwright test (no Gherkin), three browsers | `npm run test:b1-plain` |
 | Static checks (TypeScript, ESLint, Prettier) | `npm run check` |
 
-Every script first runs `bddgen`, which turns the `.feature` files into Playwright tests.
+Every script first runs `bddgen`, which turns the `.feature` files into Playwright tests. **All commands, with what each one runs, are in [COMMANDS.md](COMMANDS.md).**
 
 ## Reports and failure evidence
 
@@ -167,7 +168,7 @@ Each bug, with steps and evidence, is in the Excel sheet *Bugs* and in [docs/kno
 | [docs/traceability-matrix.md](docs/traceability-matrix.md) | Every manual ID → scenario → result |
 | [docs/test-strategy.md](docs/test-strategy.md) | Layers, scope, entry and exit criteria |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · [docs/CONVENTIONS.md](docs/CONVENTIONS.md) | Folder layout, how a run flows, coding rules |
-| [docs/RUNNING.md](docs/RUNNING.md) · [docs/STEP_REFERENCE.md](docs/STEP_REFERENCE.md) | All settings and scripts; every Gherkin step |
+| [COMMANDS.md](COMMANDS.md) · [docs/RUNNING.md](docs/RUNNING.md) · [docs/STEP_REFERENCE.md](docs/STEP_REFERENCE.md) | Every command; all settings and tags; every Gherkin step |
 
 ### Project layout
 
@@ -180,7 +181,7 @@ src/test/pages/         page objects and components/MenuComponent
 src/test/support/       money (whole cents), business-rule assertions, users, axe helpers
 manual_test_cases/      Excel: Summary, Core Test Cases (A1), Extended Test Cases, Bugs
 examples/               B1 rewrite as a plain Playwright test, with its own small config
-evidence/               logs of the runs quoted in this README
+evidence/               logs of the runs quoted in this README (index: evidence/README.md)
 .github/workflows/      CI: Playwright on pushes to main and on pull requests
 playwright.config.ts    browsers, workers, reporters, screenshots and traces on failure
 ```

@@ -24,7 +24,7 @@ A Playwright + TypeScript BDD suite for https://www.saucedemo.com. Scenarios are
 | `src/test/data/` | Static data used by steps (default customer, sort labels). |
 | `src/test/support/` | Test helpers: money parsing, business-rule assertions, user roles and placeholders, selected-items tracking. |
 | `scripts/` | `generate-report.js` (Cucumber Spark report). |
-| `docs/` | This file, `CONVENTIONS.md`, `RUNNING.md`, `STEP_REFERENCE.md`, test strategy, traceability and limitations. |
+| `docs/` | This file, `CONVENTIONS.md`, `RUNNING.md` (settings and tags), `STEP_REFERENCE.md`, test strategy, traceability and limitations. |
 | `evidence/` | Execution logs kept as evidence. |
 | `.features-gen/`, `reports/`, `test-results/`, `logs/` | Generated output. Git-ignored. |
 
