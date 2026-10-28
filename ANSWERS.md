@@ -258,14 +258,15 @@ How each problem is fixed: base URL and users come from `config/.env.<ENV>` (2, 
 7. **Update the client:** acknowledge within minutes with what we know, then update at a fixed interval (e.g. every 30–60 min): what we know, what we don't, next step, next update time. Escalate to on-call engineering and the vendor by severity. One incident channel and a timeline.
 8. **Close it out:** confirm the root cause (reproduce it, show the fix removes it); quick mitigation first (rollback, flag off, failover); watch monitoring after the fix; then a regression test at the right layer, an alert on the early signal, and a blameless review with owners and dates.
 
-### C2 — A recent production issue (to be filled from my own experience)
+### C2 — A recent production issue
 
-> This must be a real example from my own work, so it is left as a structure to fill in. No details are invented.
+> I don't have a recent production incident that I can share in detail, so I'll answer from my experience of testing this application end to end, manually and with automation.
 
-| Point | What to cover |
-|-------|---------------|
-| What happened, how found, impact | `[system, how it was noticed (test / monitoring / user report), who and how many were affected, for how long]` |
-| Root cause | `[evidence gathered, how it was narrowed down, the actual cause, why existing tests missed it]` |
-| Explaining it to the client | `[who was told, how soon, what was said, how the impact was put in plain words]` |
-| Stopping it happening again | `[new tests, monitoring, checks or process changes, and whether they have caught anything since]` |
-| Looking back | `[what I would do differently next time]` |
+| Point | My answer |
+|-------|-----------|
+| **What happened and how I found it** | No production issue came up. While running the core journeys by hand and in three browsers, I also noted how easy each journey felt for a shopper. Two journeys stood out: the **cart journey is smooth**, and the **menu journey is harder than it needs to be**. |
+| **What works well: adding to the cart** | One click on "Add to cart". The button changes to "Remove" straight away, the cart number updates, and the cart shows the same price as the Products page. Checkout is three short steps with clear error messages. A first-time user can buy without help. |
+| **Why the menu feels harder (the "root cause")** | Everything outside shopping is hidden behind the ☰ icon, even on a wide desktop screen: All Items, Dynamic Catalog, About, Logout and Reset App State. Logging out takes two clicks and is not visible until the menu is opened. "Reset App State" and "Dynamic Catalog" are technical names that a shopper would not understand, and "Reset App State" sits right next to Logout. "About" takes the user out of the shop to the Sauce Labs website without saying so. |
+| **Explaining it to the client** | In plain words: "Shopping and checkout are smooth. The menu is the one place customers may struggle: Logout and the other options are hidden behind an icon, and some options have technical names. It won't stop anyone from buying, but a small design change would make it clearer." I would share it as a usability observation with screenshots, not as a defect, and let the product owner decide. |
+| **Suggestions to make it better** | Show Logout (or an account area) in the header on desktop. Rename "Reset App State" to something clear such as "Clear cart", or remove it from the customer menu. Mark "About" as an external link. Keep the menu tests (open, close, every item works, keyboard use) in the regression suite so a redesign doesn't break it. |
+| **Looking back** | Functional tests tell me whether a journey works, not whether it is easy. Next time I would add a short usability check early: watch two or three people do the main journeys and note where they hesitate. |
